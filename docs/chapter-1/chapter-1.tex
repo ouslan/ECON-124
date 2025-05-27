@@ -1,0 +1,67 @@
+\documentclass[10pt, oneside]{article}
+\usepackage{amsmath, amsthm, amssymb, calrsfs, wasysym, verbatim, bbm, color, graphics, geometry}
+
+\geometry{tmargin=.75in, bmargin=.75in, lmargin=.75in, rmargin = .75in}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Cdot}{\boldsymbol{\cdot}}
+
+\newtheorem{thm}{Theorem}
+\newtheorem{defn}{Definition}
+\newtheorem{conv}{Convention}
+\newtheorem{rem}{Remark}
+\newtheorem{lem}{Lemma}
+\newtheorem{cor}{Corollary}
+
+
+\title{ECOG 219: Introduction to Econ Mathematics}
+\author{Alejandro Ouslan}
+\date{Summer 2025}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\vspace{.25in}
+
+\section{Introcution}
+\begin{itemize}
+  \item $y_i = \beta x_i + \epsilon_i$
+  \item $E(X \cdot \epsilon) = 0$ 
+  \item $\epsilon \sim N(0,\sigma^2)$
+\end{itemize}
+
+
+\begin{itemize}
+  \item Let $z$ be a random variable. 
+  \item $E(z)$ is the first moment 
+  \item $E(z^2)$ is the second moment
+\end{itemize}
+
+\[
+  \begin{split}
+    E(x_i(y_i - \beta x_i)) = 0 \\
+    \frac{1}{n}\sum_{i}^{n}x_i(y_i -\beta x_i) = 0 \\
+    \sum_{i}^{n} x_i y_i - \beta \sum_{i}^{n} \\ 
+    \hat{\beta} = \frac{\sum_{i}^{n}x_i y_i}{\sum_{i}^{n}x_i^2}
+  \end{split}
+\]
+
+
+minimicing the errors:
+
+\[
+\begin{split}
+  u_i = y_i - \beta x_i \\
+  \beta = (X^TX)^{-i} X^{T}Y
+\end{split}
+\]
+
+
+
+\end{document}

@@ -142,30 +142,122 @@
 
 % Homework problem 1
 \begin{homeworkProblem}
+  Let 
+    $A = \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix}$, 
+    $B = \begin{bmatrix} 1 & -1 \\ 0 & 1\end{bmatrix}$, 
+    $C = \begin{bmatrix} -1 & 0 \\ 1 & 1 \\ 0 & 1\end{bmatrix}$,
+    $D = \begin{bmatrix} -3 & -2 & -1 \\ 1 & 2 & 3\end{bmatrix}$.
+    Find the following:
+    \begin{enumerate}
+      \item $A - C'$
+      \item $C' + 3D$
+      \item $CB$
+      \item $D'D$
+    \end{enumerate}
 \end{homeworkProblem}
 
 % Problem 2 
 \begin{homeworkProblem}
+  Given the square matrices:
+  $$
+  A = \begin{bmatrix}
+    3 & -1 & 2 \\ 1 & 0 & 3 \\ 3 & -2 & -5
+    \end{bmatrix}, B = \begin{bmatrix}
+    3 & -6 & -3 \\ 7 & -14 & -7 \\ -1 & 2 & 1
+  \end{bmatrix}
+    $$
+    Verify that $AB=0$
 \end{homeworkProblem}
 
 % Problem 3 
 \begin{homeworkProblem}
+  The following table shows the number of personnel, in thousands, 
+  in three branches of the U.S. Army in 2001, and the changes in 2002 and 2003.
+
+\begin{table}[h!]
+  \centering
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+     & Active Duty & Reserve & National Guard \\
+    \hline
+    2001 & 75 & 35 & 60 \\
+    \hline
+    Change in 2002 & 5 & -15 & 2 \\
+    \hline
+    2003 & -12 & 5 & -17 \\
+    \hline
+  \end{tabular}
+\end{table}
+Use matrix algebra to find the number of personel in each branch 
+\begin{enumerate}
+  \item peronnel 2001
+  \item Personnel 2002
+\end{enumerate}
+
 \end{homeworkProblem}
 
 % Problem 4
 \begin{homeworkProblem}
+  \begin{enumerate}
+    \item Suppose $b_1$ is the least squares estimator of the slope coefficient 
+      in a regression of $Y$ on $X$ and $b_2$ is the slope coefficient estimator in a "reverse"
+      regression of $X$ on $Y$. Show that $R^2 = b_1 b_2$ where $R$ is the correlation between 
+      $Y$ and $X$. 
+    \item From a sample of 200 observation the following quantities were calculated:
+      $$
+      \sum X =11, \sum Y = 20, \sum X^2 = 12, \sum XY= 22, \sum Y^2 =84
+      $$
+      Estimate both regression equations an calculate $R^2$. Calculate the standard error 
+      of $b_1$.
+  \end{enumerate}
 \end{homeworkProblem}
 
 % Problem 5
 \begin{homeworkProblem}
+  Consider the equation $Y = \beta_0 + \beta_1 X_1 + \beta_2 X_2$, where 
+  $X_1 \sim (\mu_{X_1}, \sigma_{X_1}^2)$ is independent of $X_2 \sim (\mu_{X_2}, \sigma_{X_2}^2)$ 
+  with this information answer the following questions:
+  \begin{enumerate}
+    \item What is the expected value of $X_1$? What is the expected value of  $X_2$?
+    \item What is the variance of $X_1?$ what is the variance of  $X_2$.
+    \item What is the expected value of $Y$?
+    \item What is the variance of $Y$?
+    \item What is the marginal effect of $X_1$ on $Y$? What is the marginal effect of 
+      $X_2$ on $Y$?
+  \end{enumerate}
 \end{homeworkProblem}
 
 % Problem 6
 \begin{homeworkProblem}
+  Consider an independent random sample of data of size  $n$ drawn from the continuous distribution 
+  of $X \sim N(\mu,\sigma^2)$. Suppose for whatever reason, we do not like the fist observtion and we 
+  propose the following estimator of $\mu$:
+  $$
+  \bar{X} = \frac{x_2 + x_3 + \ldots + x_n}{n}
+  $$
+  \begin{enumerate}
+    \item what is expected value of $\bar{x}$
+    \item What is the bias of $\bar{x}$?
+    \item What is the variance of $\bar{x}$?
+    \item What is the mean square error of $\bar{x}$?
+    \item What happens to the results in parts (a-d) when the sample size $n$ tends to infinity? what can be said 
+      about this estimator in this scenario?
+  \end{enumerate}
 \end{homeworkProblem}
 
 % Problem 7
 \begin{homeworkProblem}
+  Consider the following multiple linear regression model
+  $$y = X\beta + u$$
+  where $y$ is $n \times 1$, $X$ is $n \times k$ and u is $n \times 1$ 
+  such that $u|x \sim N(0, \sigma^2 I_n)$. Write $Y= \hat{Y} + \hat{u}$,where 
+  $\hat{y} = X\hat{\beta}$ is the least squares predicted values. 
+  \begin{enumerate}
+    \item Show that $(\hat{\beta} - \beta)= Au$ and $\hat{u} = Mu$, what are your $A$ and $M$?
+    \item Show that $\bar{y} = $ the mean of the predicted values $\hat{y}$
+    \item Show that $X'\hat{u} = 0,\hat{y}\hat{u}=0$
+    \item Derive $R^2$ for the model where the first column of $X$ has a constant.
+  \end{enumerate}
 \end{homeworkProblem}
 
 \end{document}

@@ -150,9 +150,40 @@
     Find the following:
     \begin{enumerate}
       \item $A - C'$
+        \[
+          \begin{split}
+          \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix} - \begin{bmatrix} -1 & 0 \\ 1 & 1 \\ 0 & 1\end{bmatrix}' \\
+          \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix} - \begin{bmatrix} -1 & 1 & 0 \\ 0 & 1 & 1\end{bmatrix} \\
+          \begin{bmatrix} 2 & 1 & 3 \\ 4 & 4 & 5 \end{bmatrix}
+        \end{split}
+        \]
       \item $C' + 3D$
+        \[
+          \begin{split}
+              \begin{bmatrix} -1 & 1 & 0 \\ 0 & 1 & 1\end{bmatrix} + 3 \begin{bmatrix} -3 & -2 & -1 \\ 1 & 2 & 3\end{bmatrix} \\
+              \begin{bmatrix} -1 & 1 & 0 \\ 0 & 1 & 1\end{bmatrix} + \begin{bmatrix} -9 & -6 & -3 \\ 3 & 6 & 9\end{bmatrix} \\
+              \begin{bmatrix} -10 & -5 & -3 \\ 3 & 7 & 10 \end{bmatrix}
+          \end{split}
+        \]
+      \item $BA$
+        \[
+          \begin{split}
+            \begin{bmatrix} 1 & -1 \\ 0 & 1\end{bmatrix}  \begin{bmatrix} 1 & 2 & 3 \\ 4 & 5 & 6 \end{bmatrix} \\
+            \begin{bmatrix} -5 & -3 & -3  \\ 4 & 5 & 6 \end{bmatrix}
+          \end{split}
+        \]
       \item $CB$
+        \[
+          \begin{split}
+            \begin{bmatrix} -1 & 0 \\ 1 & 1 \\ 0 & 1\end{bmatrix} \begin{bmatrix} -3 & -2 & -1 \\ 1 & 2 & 3\end{bmatrix}
+          \end{split}
+        \]
       \item $D'D$
+        \[
+          \begin{split}
+            \begin{bmatrix} -3 & -2 & -1 \\ 1 & 2 & 3\end{bmatrix} \begin{bmatrix} -3 & 1 \\ -2 & 2 \\ -1 & 3 \end{bmatrix}
+          \end{split}
+        \]
     \end{enumerate}
 \end{homeworkProblem}
 
@@ -167,6 +198,19 @@
   \end{bmatrix}
     $$
     Verify that $AB=0$
+    \[
+      \begin{split}
+       (AB)_{11} &= a_{11}b_{11} + a_{12}b_{21} + a_{13}b_{31} = 3 \cdot 3 + (-1) \cdot 7 + 2 \cdot (-1) = 0 \\
+       (AB)_{12} &= a_{11}b_{12} + a_{12}b_{22} + a_{13}b_{32} = 3 \cdot (-6) + (-1) \cdot (-14) + 2 \cdot 2 = 0 \\
+       (AB)_{13} &= a_{11}b_{13} + a_{12}b_{23} + a_{13}b_{33} = 3 \cdot (-3) + (-1) \cdot (-7) + 2 \cdot 1 = 0 \\
+       (AB)_{21} &= a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31} = 1 \cdot 3 + 0 \cdot 7 + 3 \cdot (-1) = 0 \\
+       (AB)_{22} &= a_{21}b_{12} + a_{22}b_{22} + a_{23}b_{32} = 1 \cdot (-6) + 0 \cdot (-14) + 3 \cdot 2 = 0 \\
+       (AB)_{23} &= a_{21}b_{13} + a_{22}b_{23} + a_{23}b_{33} = 1 \cdot (-3) + 0 \cdot (-7) + 3 \cdot 1 = 0 \\
+       (AB)_{31} &= a_{31}b_{11} + a_{32}b_{21} + a_{33}b_{31} = 3 \cdot 3 + (-2) \cdot 7 + (-5) \cdot (-1) = 0 \\
+       (AB)_{32} &= a_{31}b_{12} + a_{32}b_{22} + a_{33}b_{32} = 3 \cdot (-6) + (-2) \cdot (-14) + (-5) \cdot 2 = 0 \\
+       (AB)_{33} &= a_{31}b_{13} + a_{32}b_{23} + a_{33}b_{33} = 3 \cdot (-3) + (-2) \cdot (-7) + (-5) \cdot 1 = 0 \\
+      \end{split}
+    \]
 \end{homeworkProblem}
 
 % Problem 3 
@@ -174,7 +218,7 @@
   The following table shows the number of personnel, in thousands, 
   in three branches of the U.S. Army in 2001, and the changes in 2002 and 2003.
 
-\begin{table}[h!]
+\begin{table}[h!t]
   \centering
   \begin{tabular}{|c|c|c|c|}
     \hline
@@ -188,10 +232,20 @@
     \hline
   \end{tabular}
 \end{table}
-Use matrix algebra to find the number of personel in each branch 
+Use matrix algebra to find the number of personnel in each branch 
 \begin{enumerate}
-  \item peronnel 2001
+  \item personnel 2001
+    \[
+      \begin{split}
+        \begin{bmatrix} 75 \\ 35 \\ 60 \end{bmatrix} + \begin{bmatrix} 5 \\ -15 \\ 2 \end{bmatrix} = \begin{bmatrix} 80 \\ 20 \\ 62 \end{bmatrix} \\
+      \end{split}
+    \]
   \item Personnel 2002
+    \[
+      \begin{split}
+        \begin{bmatrix} 75 \\ 35 \\ 60 \end{bmatrix} + \begin{bmatrix} 5 \\ -15 \\ 2 \end{bmatrix} + \begin{bmatrix} -12 \\ 5 \\ -17\end{bmatrix} = \begin{bmatrix} 68 \\ 25 \\ 45 \end{bmatrix}
+      \end{split}
+    \]
 \end{enumerate}
 
 \end{homeworkProblem}
@@ -202,13 +256,41 @@ Use matrix algebra to find the number of personel in each branch
     \item Suppose $b_1$ is the least squares estimator of the slope coefficient 
       in a regression of $Y$ on $X$ and $b_2$ is the slope coefficient estimator in a "reverse"
       regression of $X$ on $Y$. Show that $R^2 = b_1 b_2$ where $R$ is the correlation between 
-      $Y$ and $X$. 
+      $Y$ and $X$.
+      \[
+        \begin{split}
+          b_1 &= \frac{Cor(X,Y)}{Var(X)} \\ 
+          b_2 &= \frac{Cor(X,Y)}{Var(Y)} \\
+          b_1 b_2 &= \frac{Cor(X,Y)^2}{Var(X) Var(Y)} \\
+                  &= \left(\frac{Cor(X,Y)}{\sqrt{Var(X) Var(Y)}}\right)^2 \\
+                  &= R^2
+        \end{split}
+      \]
     \item From a sample of 200 observation the following quantities were calculated:
       $$
-      \sum X =11, \sum Y = 20, \sum X^2 = 12, \sum XY= 22, \sum Y^2 =84
+     \sum X = 11, \quad \sum Y = 20, \quad \sum X^2 = 12, \quad \sum XY = 22, \quad \sum Y^2 = 84
       $$
       Estimate both regression equations an calculate $R^2$. Calculate the standard error 
       of $b_1$.
+  \[
+    \begin{split}
+  \bar{X} = \frac{11}{200} = 0.055, \quad \bar{Y} = \frac{20}{200} = 0.1 \\
+  S_{XX} = \sum X^2 - n\bar{X}^2 = 12 - 200 \cdot (0.055)^2 = 11.395 \\
+  S_{YY} = \sum Y^2 - n\bar{Y}^2 = 84 - 200 \cdot (0.1)^2 = 82 \\
+  S_{XY} = \sum XY - n\bar{X}\bar{Y} = 22 - 200 \cdot 0.055 \cdot 0.1 = 20.9 \\
+  b_1 = \frac{S_{XY}}{S_{XX}} = \frac{20.9}{11.395} \approx 1.834 \\
+  a_1 = \bar{Y} - b_1 \bar{X} = 0.1 - 1.834 \cdot 0.055 \approx -0.00087 \\
+  \hat{Y} = -0.00087 + 1.834 X \\
+  b_2 = \frac{S_{XY}}{S_{YY}} = \frac{20.9}{82} \approx 0.255 \\
+  a_2 = \bar{X} - b_2 \bar{Y} = 0.055 - 0.255 \cdot 0.1 = 0.0295 \\
+  \hat{X} = 0.0295 + 0.255 Y \\
+  R^2 = b_1 b_2 = 1.834 \cdot 0.255 \approx 0.467 \\
+  \text{RSS} = S_{YY} - b_1 S_{XY} = 82 - 1.834 \cdot 20.9 \approx 43.6594 \\
+  \text{SE}_{b_1} = \sqrt{ \frac{1}{n-2} \cdot \frac{\text{RSS}}{S_{XX}}} \\
+  = \sqrt{ \frac{1}{198} \cdot \frac{43.6594}{11.395} } \\
+  \approx \sqrt{0.01936} \approx 0.139 \\   
+    \end{split}
+  \]
   \end{enumerate}
 \end{homeworkProblem}
 
@@ -237,11 +319,46 @@ Use matrix algebra to find the number of personel in each branch
   $$
   \begin{enumerate}
     \item what is expected value of $\bar{x}$
+      \[
+        \begin{split}
+          \mathbb{E}[\bar{X}] = \mathbb{E}\left[\frac{x_2 + x_3 + \dots + x_n}{n}\right] \\
+          \mathbb{E}[\bar{X}] = \frac{1}{n} \sum_{i=2}^{n} \mathbb{E}[X_i] \\
+          \mathbb{E}[\bar{X}] = \frac{1}{n} \cdot (n-1) \cdot \mu = \frac{n-1}{n} \mu \\
+          \mathbb{E}[\bar{X}] = \frac{n-1}{n} \mu
+        \end{split}
+      \]
     \item What is the bias of $\bar{x}$?
+      \[
+        \begin{split}
+          \text{Bias}(\bar{X}) = \mathbb{E}[\bar{X}] - \mu \\
+          \text{Bias}(\bar{X}) = \frac{n-1}{n} \mu - \mu = \mu \left( \frac{n-1}{n} - 1 \right) = \mu \cdot \left( \frac{-1}{n} \right) \\
+          \text{Bias}(\bar{X}) = -\frac{\mu}{n}
+        \end{split}
+      \]
     \item What is the variance of $\bar{x}$?
+      \[
+        \begin{split}
+          \text{Var}(\bar{X}) = \frac{1}{n^2} \cdot \sum_{i=2}^{n} \text{Var}(X_i) \\
+          \text{Var}(\bar{X}) = \frac{1}{n^2} \cdot (n-1) \cdot \sigma^2 = \frac{n-1}{n^2} \sigma^2 \\
+          \text{Var}(\bar{X}) = \frac{n-1}{n^2} \sigma^2 \\
+        \end{split}
+      \]
     \item What is the mean square error of $\bar{x}$?
+      \[
+        \begin{split}
+        \text{MSE}(\bar{X}) = \mathbb{E}[\bar{X}^2] - (\mathbb{E}[\bar{X}])^2 \\
+        \mathbb{E}[\bar{X}^2] = \text{Var}(\bar{X}) + (\mathbb{E}[\bar{X}])^2 \\
+        \mathbb{E}[\bar{X}] = \frac{n-1}{n} \mu, \quad \text{Var}(\bar{X}) = \frac{n-1}{n^2} \sigma^2 \\
+        \mathbb{E}[\bar{X}^2] = \frac{n-1}{n^2} \sigma^2 + \left( \frac{n-1}{n} \mu \right)^2 \\
+        = \frac{n-1}{n^2} \sigma^2 + \frac{(n-1)^2}{n^2} \mu^2 \\
+        \text{MSE}(\bar{X}) = \frac{n-1}{n^2} \sigma^2 + \frac{(n-1)^2}{n^2} \mu^2 - \left( \frac{n-1}{n} \mu \right)^2 \\
+        \text{MSE}(\bar{X}) = \frac{n-1}{n^2} \sigma^2 \\
+        \end{split}
+      \]
     \item What happens to the results in parts (a-d) when the sample size $n$ tends to infinity? what can be said 
-      about this estimator in this scenario?
+      about this estimator in this scenario? \\
+      \textbf{Answer:} Given the law of large number even with the bias as the number of observations increases 
+      the parameter will converge to the true parameter
   \end{enumerate}
 \end{homeworkProblem}
 
@@ -254,9 +371,56 @@ Use matrix algebra to find the number of personel in each branch
   $\hat{y} = X\hat{\beta}$ is the least squares predicted values. 
   \begin{enumerate}
     \item Show that $(\hat{\beta} - \beta)= Au$ and $\hat{u} = Mu$, what are your $A$ and $M$?
+      \[
+        \begin{split}
+          \hat{\beta} = (X'X)^{-1} X'y \\
+          \hat{\beta} = (X'X)^{-1} X' (X\beta + u) = (X'X)^{-1} X' X \beta + (X'X)^{-1} X' u \\
+          \hat{\beta} = \beta + (X'X)^{-1} X' u \\
+          \hat{\beta} - \beta = (X'X)^{-1} X' u \\
+          A = (X'X)^{-1} X' \\
+          \hat{\beta} - \beta = Au \\
+          \hat{y} = X \hat{\beta} = X \left( \beta + (X'X)^{-1} X' u \right) \\
+          \hat{y} = X \beta + X (X'X)^{-1} X' u \\
+          \hat{u} = y - \hat{y} = X\beta + u - \left( X\beta + X(X'X)^{-1}X'u \right) \\
+          \hat{u} = u - X(X'X)^{-1} X' u \\
+          M = I_n - X(X'X)^{-1} X' \\
+          \hat{u} = Mu \\
+        \end{split}
+      \]
     \item Show that $\bar{y} = $ the mean of the predicted values $\hat{y}$
+       The mean of the observed values \( y \) is:
+      \[
+        \begin{split}
+          \bar{y} = \frac{1}{n} \sum_{i=1}^n y_i = \frac{1}{n} \mathbf{1}' y \\
+          \hat{y} = X \hat{\beta} \\
+          \bar{\hat{y}} = \frac{1}{n} \mathbf{1}' \hat{y} = \frac{1}{n} \mathbf{1}' X \hat{\beta} \\
+          \bar{\hat{y}} = \frac{1}{n} \mathbf{1}' X (X'X)^{-1} X' y \\
+          \bar{\hat{y}} = \bar{y} \\
+        \end{split}
+      \]
+
     \item Show that $X'\hat{u} = 0,\hat{y}\hat{u}=0$
+      \[
+        \begin{split}
+          \hat{u} = y - \hat{y} = y - X \hat{\beta} \\
+          X'\hat{u} = X'(y - X\hat{\beta}) = X'y - X'X\hat{\beta} \\
+          X'\hat{u} = X'y - X'y = 0 \\
+          \hat{y}'\hat{u} = (X \hat{\beta})'(y - X \hat{\beta}) \\
+          \hat{y}'\hat{u} = \hat{\beta}' X' (y - X \hat{\beta}) = \hat{\beta}' X' y - \hat{\beta}' X' X \hat{\beta} \\
+          \hat{y}'\hat{u} = \hat{\beta}' X' y - \hat{\beta}' X' X (X'X)^{-1} X' y \\
+          = \hat{\beta}' X' y - \hat{\beta}' X' y = 0 \\
+        \end{split}
+      \]
     \item Derive $R^2$ for the model where the first column of $X$ has a constant.
+      \[
+        \begin{split}
+            R^2 = 1 - \frac{\text{SSR}}{\text{SST}} \\
+            \text{SST} = (y - \bar{y})'(y - \bar{y}) = y'y - n\bar{y}^2 \\
+            \text{SSR} = \hat{u}' \hat{u} = u'Mu \\
+            \text{SSE} = \hat{y}' \hat{y} - n \bar{y}^2 \\
+            R^2 = 1 - \frac{\hat{u}' \hat{u}}{y'y - n \bar{y}^2} \\
+        \end{split}
+      \]
   \end{enumerate}
 \end{homeworkProblem}
 

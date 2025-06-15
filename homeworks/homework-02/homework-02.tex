@@ -1,0 +1,211 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+
+\usetikzlibrary{automata,positioning}
+
+%
+% Basic Document Settings
+%
+
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+	\nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\stepcounter{#1}
+	\nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{homeworkProblem}[1][-1]{
+	\ifnum#1>0
+		\setcounter{homeworkProblemCounter}{#1}
+	\fi
+	\section{Problem \arabic{homeworkProblemCounter}}
+	\setcounter{partCounter}{1}
+	\enterProblemHeader{homeworkProblemCounter}
+}{
+	\exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Problem Set\ \#1}
+\newcommand{\hmwkDueDate}{Jun 15, 2025}
+\newcommand{\hmwkClass}{ECON 124}
+\newcommand{\hmwkClassInstructor}{Dr. Deniz Baglan}
+\newcommand{\hmwkAuthorName}{\textbf{Alejandro Ouslan}}
+
+%
+% Title Page
+%
+
+\title{
+	\vspace{2in}
+	\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+	\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+	\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+	\vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+% Homework problem 1
+\begin{homeworkProblem}
+  Consider two least-square Regressions
+  $$y = X_1 \beta_1 + \epsilon$$
+  and 
+  $$y = X_1 \beta_1 + X_2 \beta_2 \epsilon$$
+  Let $R_1^2$ and $R_2^2$ be the R+squared from the two regressions, respectively. Show
+  that $R_2^2 \ge R_1^2$
+\end{homeworkProblem}
+
+% Homework Problem 2 
+\begin{homeworkProblem}
+  Use the cps09mar data for this question. The data set and the description file is 
+  attached under the assignment of Canvas. Estimate a log wage regression for the subsample 
+  of white male Hispanics. In addition to education, experience, and its square, include a set of binary 
+  variables for Northeast, South and West so that Midwest is the exuded group. For marital status, create 
+  variables for married, widow or divorced, and separated, so that single (never married) is the excluded 
+  group.
+\end{homeworkProblem}
+
+% Homework Problem 3 
+\begin{homeworkProblem}
+  The data koop tobias subsample is extracted from koop and tobias (2004) study
+  of the relationship between wages and education, ability, and family characterises. 
+  Et $X_1$ equal a constant, education, experience, and ability. Let $X_2$ contain
+  the mothers education, the fathers education, and the number of siblings. Let $y$ 
+  e the log of the hourly wage. Show you regression output
+
+  \begin{enumerate}
+    \item Compute the least square regression coefficients in the regression of $y$ on $X_1$.
+      Report the coefficients. 
+    \item Compute the least square regression coefficients in the regression of $y$ on $X_1$ 
+      and $X_2$. Report the coefficients.
+    \item Regress each of the three variables in $X_2$ on all the variables in  $X_1$ and copete 
+      the residuals form each regression. Arrange these new variables in the (15X3) matrix $X_2^\star$. 
+      What are the sample means of these three variables?
+    \item Compute the $R^2$ for the regress8ion of $y$ on $X_1$ and $X_2$. Repeat the computation for the 
+      case in which the constant term is omitted from $X_1$. What happens to $R^2$? 
+    \item Compute the adjusted $R^2$ for the full regression including the constant term. 
+  \end{enumerate}
+\end{homeworkProblem}
+
+% Homework Problem 4
+Suppose that you have two independent unbiased estimators of the same parameter $\theta$, say 
+$\hat{\theta}_1$ and $\hat{\theta}_2$, with different variances $v_1$ and $v_2$, What linear combination 
+$\hat{\theta} = c_1\hat{\theta_1} + c_2\hat{\theta}_2$ is the minimum variance unbiased estimator of 
+$\theta$?
+
+% Homework Problem 5 
+Analyze the properties of the Least Squares (LS) estimator of the slope coefficient in a simple 
+linear regression model using the Monte Carl method. Specifically, the true model is given by 
+$$y_i = 1 + 2x_i + \epsilon_i$$
+
+Where the intercept is 1, and the slope coefficient is 2. The errors $\epsilon_i$ are normally 
+distributed with mean zero and variance 3, $\epsilon \sim N(0,6)$. The independent variable $x$
+is uniformly distributed between 0 and 6, $X \sim (0,6)$.
+
+Conduct the following experiment: Draw 1000 samples of sizes 25,50, and 100 from the 
+distribution of the error term and the predictor variable. For each sample, estimate
+the slope coefficient using the LS estimator. Then, analyze the 
+
+\begin{enumerate}
+  \item Unbiasedness, variance, and the shape of the distribution of the LS estimator of the slope 
+    coefficient by plotting the distribution for each sample size. 
+  \item Compare the variance of the estimated slope coefficient obtained form the Monte Carlo simulation with 
+    the variance obtained using the asymptotic formula and the variance obtained using a bootstrap method 
+\end{enumerate}
+
+\end{document}

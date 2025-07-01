@@ -232,12 +232,79 @@
 	The true model underlying these data is $ y = x_1 + x_2 + x_3 + \epsilon$.
 	\begin{enumerate}
 		\item Compute the simple correlation among the regressors.
+		      \[
+			      \begin{bmatrix}
+				      1.0000 & 0.6093 & 0.9186 \\
+				      0.6093 & 1.0000 & 0.8716 \\
+				      0.9186 & 0.8716 & 1.0000
+			      \end{bmatrix}
+		      \]
 		\item Compute the ordinary least squares coefficients in the regression of $y$ on a constant, $x_1$, $x_2$, and $x_3$.
+		      \[
+			      \hat{\beta} =
+			      \begin{bmatrix}
+				      -0.4022 \\
+				      6.1234  \\
+				      5.9097  \\
+				      -7.5256
+			      \end{bmatrix}
+		      \]
 		\item Compute the ordinary least squares coefficients in the regression of $y$ on a
 		      constant $x_1$ and $x_2$, on a constant, $X_1$ and $x_3$, and on a constant, $x_2$ and $x_3$.
+		      \[
+			      \text{Regression of } y \text{ on a constant, } x_1, x_2:
+			      \quad
+			      \hat{\beta} =
+			      \begin{bmatrix}
+				      -0.2264 \\
+				      2.2801  \\
+				      2.1061
+			      \end{bmatrix}
+		      \]
+
+		      \[
+			      \text{Regression of } y \text{ on a constant, } x_1, x_3:
+			      \quad
+			      \hat{\beta} =
+			      \begin{bmatrix}
+				      -0.0696 \\
+				      0.2292  \\
+				      4.0254
+			      \end{bmatrix}
+		      \]
+
+		      \[
+			      \text{Regression of } y \text{ on a constant, } x_2, x_3:
+			      \quad
+			      \hat{\beta} =
+			      \begin{bmatrix}
+				      -0.0627 \\
+				      -0.0918 \\
+				      4.3585
+			      \end{bmatrix}
+		      \]
+
 		\item Compute the variance inflation factor associated with each variable.
+		      \[
+			      \text{Variance Inflation Factors (VIFs):}
+		      \]
+		      \[
+			      \begin{aligned}
+				      \text{VIF}(x_1) & = 258.40 \\
+				      \text{VIF}(x_2) & = 168.07 \\
+				      \text{VIF}(x_3) & = 676.27
+			      \end{aligned}
+		      \]
+
 		\item The regressors are obviously badly collinear, Which is the problem variable? Explain
+
+		      The most problematic variable is $x_3$ with a VIF of $676.27$
 	\end{enumerate}
+
+	\begin{pythonbox}[Python Code]
+		\inputminted{python}{code/code_1.py}
+	\end{pythonbox}
+
 \end{homeworkProblem}
 
 % Homework problem 2
@@ -252,6 +319,10 @@
 		\end{bmatrix}
 	$$
 	Test the hypothesis that the two slopes sum to 1
+
+	\begin{pythonbox}[Python Code]
+		\inputminted{python}{code/code_2.py}
+	\end{pythonbox}
 \end{homeworkProblem}
 
 % Homework problem 3
@@ -274,12 +345,106 @@
 
 	\begin{enumerate}
 		\item compute the full regression of $(\ln{wage} \sim X_1)$ and $(\ln{wage} \sim X_2)$
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{OLS Regression Results: $\ln(\text{wage}) \sim X_1$}
+			      \begin{tabular}{lcccccc}
+				      \hline
+				      \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                               & \textbf{t} & \textbf{P$>|t|$} & \textbf{[0.025} & \textbf{0.975]} \\
+				      \hline
+				      const                                & 1.0272         & 0.030                                            & 34.194     & 0.000            & 0.968           & 1.086           \\
+				      education ($x_1$)                    & 0.0738         & 0.002                                            & 33.312     & 0.000            & 0.069           & 0.078           \\
+				      experience ($x_2$)                   & 0.0395         & 0.001                                            & 43.958     & 0.000            & 0.038           & 0.041           \\
+				      ability ($x_3$)                      & 0.0829         & 0.005                                            & 18.020     & 0.000            & 0.074           & 0.092           \\
+				      \hline
+				      \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                               \\
+				      \multicolumn{2}{l}{R-squared}        & 0.173          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Adj. R-squared}   & 0.173          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{F-statistic}      & 1253           & \multicolumn{4}{l}{(Prob $F$-statistic = 0.000)}                                                                     \\
+				      \multicolumn{2}{l}{No. Observations} & 17919          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Residuals}     & 17915          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Model}         & 3              & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Log-Likelihood}   & -12283         & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{AIC}              & 24570          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{BIC}              & 24600          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{7}{l}{Durbin-Watson: 0.801}                                                                                                                                     \\
+				      \multicolumn{7}{l}{Omnibus: 1110.415, Prob(Omnibus): 0.000}                                                                                                                  \\
+				      \multicolumn{7}{l}{Jarque-Bera (JB): 2075.096, Prob(JB): 0.000}                                                                                                              \\
+				      \multicolumn{7}{l}{Skew: -0.458, Kurtosis: 4.393}                                                                                                                            \\
+				      \multicolumn{7}{l}{Cond. No.: 130}                                                                                                                                           \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{OLS Regression Results: $\ln(\text{wage}) \sim X_2$}
+			      \begin{tabular}{lcccccc}
+				      \hline
+				      \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                                   & \textbf{t} & \textbf{P$>|t|$} & \textbf{[0.025} & \textbf{0.975]} \\
+				      \hline
+				      const                                & 2.0119         & 0.019                                                & 104.391    & 0.000            & 1.974           & 2.050           \\
+				      mother's education ($x_1$)           & 0.0100         & 0.002                                                & 5.538      & 0.000            & 0.006           & 0.014           \\
+				      father's education ($x_2$)           & 0.0151         & 0.001                                                & 10.727     & 0.000            & 0.012           & 0.018           \\
+				      broken home ($x_3$)                  & -0.0861        & 0.011                                                & -7.964     & 0.000            & -0.107          & -0.065          \\
+				      number of siblings ($x_4$)           & 0.0020         & 0.002                                                & 1.034      & 0.301            & -0.002          & 0.006           \\
+				      \hline
+				      \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                                   \\
+				      \multicolumn{2}{l}{R-squared}        & 0.027          & \multicolumn{4}{l}{}                                                                                                     \\
+				      \multicolumn{2}{l}{Adj. R-squared}   & 0.027          & \multicolumn{4}{l}{}                                                                                                     \\
+				      \multicolumn{2}{l}{F-statistic}      & 123.2          & \multicolumn{4}{l}{(Prob $F$-statistic = 6.81e-104)}                                                                     \\
+				      \multicolumn{2}{l}{No. Observations} & 17919          & \multicolumn{4}{l}{}                                                                                                     \\
+				      \multicolumn{2}{l}{Df Residuals}     & 17914          & \multicolumn{4}{l}{}                                                                                                     \\
+				      \multicolumn{2}{l}{Df Model}         & 4              & \multicolumn{4}{l}{}                                                                                                     \\
+				      \multicolumn{2}{l}{Log-Likelihood}   & -13746         & \multicolumn{4}{l}{}                                                                                                     \\
+				      \multicolumn{2}{l}{AIC}              & 27500          & \multicolumn{4}{l}{}                                                                                                     \\
+				      \multicolumn{2}{l}{BIC}              & 27540          & \multicolumn{4}{l}{}                                                                                                     \\
+				      \multicolumn{7}{l}{Durbin-Watson: 0.782}                                                                                                                                         \\
+				      \multicolumn{7}{l}{Omnibus: 383.928, Prob(Omnibus): 0.000}                                                                                                                       \\
+				      \multicolumn{7}{l}{Jarque-Bera (JB): 580.233, Prob(JB): 1.01e-126}                                                                                                               \\
+				      \multicolumn{7}{l}{Skew: -0.229, Kurtosis: 3.753}                                                                                                                                \\
+				      \multicolumn{7}{l}{Cond. No.: 85.8}                                                                                                                                              \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
+
 		\item Use the $F$ test to test the hypothesis that all coefficients except the constant
 		      term are zero.
+
+		      $\beta_1 = \beta_2 = \beta_3 = 0$) is tested using the $F$ test.
+
+		      \[
+			      F = 1252.94, \quad p\text{-value} = 0.000, \quad \text{df}_{\text{num}} = 3, \quad \text{df}_{\text{denom}} = 17915
+		      \]
+
+		      Since the p-value is effectively zero, we reject the null hypothesis and conclude that the regressors are jointly significant.
+
 		\item Use the $F$ statistic to test the joint hypothesis that the coefficient on the four
 		      household variables in $X_2$ are zero
+		      \[
+			      H_0: \beta_1 = \beta_2 = \beta_3 = \beta_4 = 0
+		      \]
+
+		      The $F$ test statistic is
+
+		      \[
+			      F = 123.18, \quad p\text{-value} = 6.81 \times 10^{-104}, \quad \text{df}_{\text{num}} = 4, \quad \text{df}_{\text{denom}} = 17914
+		      \]
+
+		      Since the p-value is extremely small, we reject the null hypothesis and conclude that the household variables are jointly significant.
+
 		\item Use a Wald test to carry out the test in part $c$.
+		      \[
+			      H_0: \beta_1 = \beta_2 = \beta_3 = \beta_4 = 0
+		      \]
+
+		      \[
+			      F = 123.18, \quad p\text{-value} = 6.81 \times 10^{-104}, \quad \text{df}_{\text{num}} = 4, \quad \text{df}_{\text{denom}} = 17914
+		      \]
 	\end{enumerate}
+	\begin{pythonbox}[Python Code]
+		\inputminted{python}{code/code_3.py}
+	\end{pythonbox}
 \end{homeworkProblem}
 
 % Homework problem 4
@@ -293,11 +458,73 @@
 			      \log{TC}_i = \beta_1 + \beta_2 \log{Q_i} + \beta_3 \log{PL_i} + \beta_4 \log{PK_i} + \beta_5 \log{PF_i} + \epsilon_i
 		      $$
 		      Report parameter estimates and standard errors.
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{OLS Regression Results: Cobb-Douglas Cost Function}
+			      \begin{tabular}{lcccccc}
+				      \hline
+				      \textbf{Variable}                    & \textbf{Coefficient} & \textbf{Std. Error}                                               & \textbf{t-stat} & \textbf{P-value} & \textbf{[0.025} & \textbf{0.975]} \\
+				      \hline
+				      const                                & -3.5265              & 1.774                                                             & -1.987          & 0.049            & -7.035          & -0.018          \\
+				      $\log Q$                             & 0.7204               & 0.017                                                             & 41.244          & 0.000            & 0.686           & 0.755           \\
+				      $\log PL$                            & 0.4363               & 0.291                                                             & 1.499           & 0.136            & -0.139          & 1.012           \\
+				      $\log PK$                            & -0.2199              & 0.339                                                             & -0.648          & 0.518            & -0.891          & 0.451           \\
+				      $\log PF$                            & 0.4265               & 0.100                                                             & 4.249           & 0.000            & 0.228           & 0.625           \\
+				      \hline
+				      \multicolumn{7}{l}{\textit{Model Statistics:}}                                                                                                                                                           \\
+				      \multicolumn{2}{l}{R-squared}        & 0.926                & \multicolumn{4}{l}{}                                                                                                                       \\
+				      \multicolumn{2}{l}{Adj. R-squared}   & 0.924                & \multicolumn{4}{l}{}                                                                                                                       \\
+				      \multicolumn{2}{l}{F-statistic}      & 437.7                & \multicolumn{4}{l}{(Prob $F$-statistic = $4.82 \times 10^{-78}$)}                                                                          \\
+				      \multicolumn{2}{l}{No. Observations} & 145                  & \multicolumn{4}{l}{}                                                                                                                       \\
+				      \multicolumn{2}{l}{Df Residuals}     & 140                  & \multicolumn{4}{l}{}                                                                                                                       \\
+				      \multicolumn{2}{l}{Df Model}         & 4                    & \multicolumn{4}{l}{}                                                                                                                       \\
+				      \multicolumn{7}{l}{Durbin-Watson: 1.013}                                                                                                                                                                 \\
+				      \multicolumn{7}{l}{Omnibus: 51.403, Prob(Omnibus): 0.000}                                                                                                                                                \\
+				      \multicolumn{7}{l}{Jarque-Bera (JB): 175.700, Prob(JB): $7.03 \times 10^{-39}$}                                                                                                                          \\
+				      \multicolumn{7}{l}{Skew: 1.303, Kurtosis: 7.721}                                                                                                                                                         \\
+				      \multicolumn{7}{l}{Condition Number: 506}                                                                                                                                                                \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
 		\item What is the economic meaning of the restriction $H_0:\beta_3 + \beta_4 + \beta_5 = 1$?
+
+		      It means that if the cost cost of capital fuel and labor double cost will also double
 		\item Estimate the regression in (a) by constrained least squares $\beta_3 + \beta_4 + \beta_5 = 1$.
 		      Report your parameter estimates and standard errors.
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{Constrained GLS Regression Results: $\beta_3 + \beta_4 + \beta_5 = 1$}
+			      \begin{tabular}{lcccccc}
+				      \hline
+				      \textbf{Variable}                    & \textbf{Coefficient} & \textbf{Std. Error}  & \textbf{z-stat} & \textbf{P-value} & \textbf{[0.025} & \textbf{0.975]} \\
+				      \hline
+				      const                                & -4.6908              & 0.885                & -5.301          & 0.000            & -6.425          & -2.956          \\
+				      $\log Q$                             & 0.7207               & 0.017                & 41.334          & 0.000            & 0.687           & 0.755           \\
+				      $\log PL$                            & 0.5929               & 0.205                & 2.898           & 0.004            & 0.192           & 0.994           \\
+				      $\log PK$                            & -0.0074              & 0.191                & -0.039          & 0.969            & -0.381          & 0.366           \\
+				      $\log PF$                            & 0.4145               & 0.099                & 4.189           & 0.000            & 0.221           & 0.608           \\
+				      \hline
+				      \multicolumn{7}{l}{\textit{Model Statistics:}}                                                                                                              \\
+				      \multicolumn{2}{l}{No. Observations} & 145                  & \multicolumn{4}{l}{}                                                                          \\
+				      \multicolumn{2}{l}{Df Residuals}     & 141                  & \multicolumn{4}{l}{}                                                                          \\
+				      \multicolumn{2}{l}{Log-Likelihood}   & -67.838              & \multicolumn{4}{l}{}                                                                          \\
+				      \multicolumn{2}{l}{Deviance}         & 21.640               & \multicolumn{4}{l}{}                                                                          \\
+				      \multicolumn{2}{l}{Pearson Chi2}     & 21.6                 & \multicolumn{4}{l}{}                                                                          \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
 		\item Test $H_0:\beta_3 + \beta_4 + \beta_5 = 1$ using a Wald statistic.
+		      \[
+			      W = 0.0000, \quad p\text{-value} = 1.0000
+		      \]
+
+		      Since the p-value is 1, we fail to reject the null hypothesis and conclude that the linear constraint is consistent with the data.
 	\end{enumerate}
+	\begin{pythonbox}[Python Code]
+		\inputminted{python}{code/code_4.py}
+	\end{pythonbox}
 \end{homeworkProblem}
 
 \begin{homeworkProblem}

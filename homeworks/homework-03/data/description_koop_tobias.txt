@@ -1,0 +1,42 @@
+Gary Koop and Justin L. Tobias, "Learning about Heterogeneity in Returns
+to Schooling", Journal of Applied Econometrics, Vol. 19, No. 7, 2004,
+pp. 827-849.
+
+This panel data set consists of NT=17,919 observations from 
+N=2,178 individuals. The data are taken from the National 
+Longitudinal Survey of Youth. 
+
+Both data files are ASCII files in DOS format. They are zipped in the file
+kt-data.zip. Unix users should use "unzip -a".
+
+The data set is broken into two parts. The first part, "time_var.dat",
+contains the time-varying characteristics together with the
+individual-identification vector (denoted person_id). This file contains
+17,919 observations on 5 variables. These variables are: 
+
+  Column 1: Person_id (Ranging from 1-2,178). 
+  Column 2: Education 
+  Column 3: Log Hourly Wage 
+  Column 4: Potential Experience 
+  Column 5: Time Trend 
+
+(NOTE: The paper also uses a continuous local unemployment 
+rate variable, but this variable is not included here 
+as it is part of the restricted GEOCODE version of the NLSY). 
+
+The second part, "time_invar.dat," contains the time-invariant variables.
+It contains 2,178 observations on 5 variables. These are:
+
+  Column 1: Ability 
+  Column 2: Mother's Education
+  Column 3: Father's Education
+  Column 4: Dummy for Residence in Broken Home 
+  Column 5: Number of Siblings 
+
+NOTE 1: The data sets are arranged so that the individual from
+"time_var.dat" with person_id=j has the time-invariant characteristics
+listed in the j^{th} row of "time_invar.dat".
+
+NOTE 2: When performing analyses in the paper with the inclusion of the
+time_invariant characteristics, we excluded observations with parental
+education being less than 9.

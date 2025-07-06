@@ -225,5 +225,205 @@
 
 % Homework problem 1
 \begin{homeworkProblem}
+	Use the data in \textbf{FERTIL2.XLSX} to answer this question.
+	\begin{enumerate}[(a)]
+		\item Estimate the model
+		      $$
+			      children = \beta_0 + \beta_1 age + \beta_2 age^2 \beta_3 educ + \beta_4 electricity + \beta_5 urban + \epsilon
+		      $$
+		      And report the usual and heteroskedasticity-robust standard errors. Are the robust standard
+		      errors always bigger than the non robust ones?
+		\item Add the three religious dummy variables and test whether they are jointly significant.
+		      What are the p-values for the nonrobust and robust tests?
+		\item From the regression in part (b), obtain the fitted values $\hat{y}$ and the residuals, $\hat{\epsilon}$.
+		      Regress $\hat{\epsilon}^2 \sim \hat{y}$, and $\hat{\epsilon}^2 \sim \hat{y}^2$ and test the joint significance of the
+		      two regressors.
+	\end{enumerate}
 \end{homeworkProblem}
+
+\begin{homeworkProblem}
+	Use the data set \textbf{Movies}
+
+	Does viewing a violent movie lead to violent behavior? If so, the incidence of violent crimes,
+	such as assaults, should rise following the release of a violent movie that attracts many
+	viewers. Alternatively, movie viewing may substitute for other activities (such as alcohol
+	consumption) that lead to violent behavior, so that assaults should fall when more viewers
+	are attracted to the cinema. The dataset includes weekend U.S. attendance for strongly
+	violent movies (such as Hannibal), mildly violent movies (such as Spider-Man), and
+	nonviolent movies (such as Finding Nemo). The dataset also includes a count of the number
+	of assaults for the same weekend in a subset of counties in the United States. Finally, the
+	dataset includes indicators for year, month, whether the weekend is a holiday, and various
+	measures of the weather.
+
+	\begin{enumerate}[(a)]
+		\item
+		      \begin{enumerate}[(i)]
+			      \item Regress the logarithm of the number of assaults [ln\_(assaults) =
+					            ln(assaults)] on the year and month indicators. Is there evidence of
+			            seasonality in assaults? That is, do there tend to be more assaults in
+			            some months than others? Explain.
+			      \item Regress total movie attendance (attend = attend\_v + attend\_m +
+			            attend\_n) on the year and month indicators. Is there evidence of
+			            seasonality in movie attendance? Explain.
+		      \end{enumerate}
+		\item Regress ln\_assaults on attend\_v, attend\_m, attend\_n, the year and month
+		      indicators, and the weather and holiday control variables available in the data set
+		      \begin{enumerate}[(i)]
+			      \item Based on the regression, does viewing a strongly violent movie increase
+			            or decrease assaults? By how much? Is the estimated effect statistically
+			            significant?
+			      \item Does attendance at strongly violent movies affect assaults differently
+			            than attendance at moderately violent movies? Differently than
+			            attendance at nonviolent movies?
+			      \item A strongly violent blockbuster movie is released, and the weekend’s
+			            attendance at strongly violent movies increases by 6 million; meanwhile,
+			            attendance falls by 2 million for moderately violent movies and by 1
+			            million for nonviolent movies. What is the predicted effect on assaults?
+			            Construct a 95\% confidence interval for the change in assaults.
+			      \item It is difficult to control for all the variables that affect assaults and that might be
+			            correlated with movie attendance. For example, the effect of the weather on
+			            assaults and movie attendance is only crudely approximated by the weather
+			            variables in the data set. However, the data set does include a set of instruments,
+			            pr\_attend\_v, pr\_attend\_m, and pr\_attend\_n, that are correlated with attendance
+			            but are (arguably) uncorrelated with weekend-specific factors (such as the
+			            weather) that affect both assaults and movie attendance. These instruments use
+			            historical attendance patterns, not information on a particular weekend, to predict
+			            a film’s attendance in a given weekend. For example, if a film’s attendance is
+			            high in the second week of its release, then this can be used to predict that its
+			            attendance was also high in the first week of its release. (The details of the
+			            construction of these instruments are available in the Dahl and DellaVigna’s
+			            paper on Canvas) Run the regression from part (b) (including year, month,
+			            holiday, and weather controls) but now using pr\_attend\_v, pr\_attend\_m, and
+			            pr\_attend\_n as instruments for attend\_v, attend\_m, and attend\_n. Use this
+			            regression to answer (b)(i)–(b)(iii).
+			      \item It is difficult to control for all the variables that affect assaults and that might be
+			            correlated with movie attendance. For example, the effect of the weather on
+			            assaults and movie attendance is only crudely approximated by the weather
+			            variables in the data set. However, the data set does include a set of instruments,
+			            pr\_attend\_v, pr\_attend\_m, and pr\_attend\_n, that are correlated with attendance
+			            but are (arguably) uncorrelated with weekend-specific factors (such as the
+			            weather) that affect both assaults and movie attendance. These instruments use
+			            historical attendance patterns, not information on a particular weekend, to predict
+			            a film’s attendance in a given weekend. For example, if a film’s attendance is
+			            high in the second week of its release, then this can be used to predict that its
+			            attendance was also high in the first week of its release. (The details of the
+			            construction of these instruments are available in the Dahl and DellaVigna’s
+			            paper on Canvas) Run the regression from part (b) (including year, month,
+			            holiday, and weather controls) but now using pr\_attend\_v, pr\_attend\_m, and
+			            pr\_attend\_n as instruments for attend\_v, attend\_m, and attend\_n. Use this
+			            regression to answer (b)(i)–(b)(iii).
+			      \item Based on your analysis, what do you conclude about the effect of violent movies
+			            on (short-run) violent behavior?
+		      \end{enumerate}
+	\end{enumerate}
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+	We examined \textbf{Koop and Tobias's data} on wages, education, ability, and so on.
+	We considered the model.
+	\[
+		\begin{split}
+			\ln{wage} & = \beta_0 + \beta_1 educ + \beta_2 ability + \beta_3 experience \\
+			          & +\beta_4 motherEduc + \beta_5 FatherEduc + \beta_6 broken       \\
+			          & + \beta_7 sinlings + \epsilon
+		\end{split}
+	\]
+	\begin{enumerate}[(a)]
+		\item We are interested in possible non-linearities in the effect of education on ln Wage. (Koop
+		      and Tobias focused on experience. As before, we are not attempting to replicate their
+		      results.) A histogram of the education variable shows values from 9 to 20, a spike at 12
+		      years (high school graduation), and a second at 15. Consider aggregating the education
+		      variable into a set of dummy variables:
+		      \begin{center}
+			      \(
+			      \begin{aligned}
+				      \text{HS}   & = 1 \quad \text{if } \text{Educ} \leq 12,\quad 0 \text{ otherwise}      \\
+				      \text{Col}  & = 1 \quad \text{if } 12 < \text{Educ} \leq 16,\quad 0 \text{ otherwise} \\
+				      \text{Grad} & = 1 \quad \text{if } \text{Educ} > 16,\quad 0 \text{ otherwise}
+			      \end{aligned}
+			      \)
+		      \end{center}
+		      replace Educ in the model with (Col, Grad), making high school (HS) the base category,
+		      and recompute the model. Report all results. How do the results change? Based on your
+		      results, what is the marginal value of a college degree? What is the marginal impact on ln
+		      Wage of a graduate degree?
+		\item The aggregation in part (a) actually loses quite a bit of information. Another way to
+		      introduce non-linearity in education is through the function itself. Add $educ^2$ to the
+		      equation in part (a) and recompute the model. Again, report all results. What changes are
+		      suggested? Test the hypothesis that the quadratic term in the equation is not needed—that
+		      is, that its coefficient is zero. Based on your results, sketch a profile of log wages as a
+		      function of education.
+		\item One might suspect that the value of education is enhanced by greater ability. We could
+		      examine this effect by introducing an interaction of the two variables in the equation.
+		      Add the variable
+		      $$
+			      EducAb = Educ \times ability
+		      $$
+		      to the base model in part a. Now, what is the marginal value of an additional year of
+		      education? The sample mean value of ability is 0.052374. Compute a confidence interval
+		      for the marginal impact on ln Wage of an additional year of education for a person of
+		      average ability.
+		\item Combine the models in (b) and (c). Add both $educ^2$ and $EducAb$ to the base model in
+		      the beginning of the question and re-estimate. As before, report all results and describe
+		      your findings. If we define low ability as less than the mean and high ability as greater
+		      than the mean, the sample averages are $-0.798563$ for the 7,864 low-ability individuals in
+		      the sample and $+0.717891$ for the 10,055 high-ability individuals in the sample. Using
+		      the formulation in part (b), with this new functional form, sketch, describe, and compare
+		      the log wage profiles for low- and high-ability individuals.
+		\item Suppose that you are now given the following regression model:
+		      \[
+			      \begin{split}
+				      \ln(\text{wage}) =   \beta_0 & + \beta_1  \text{educ} \times \mathbf{1}(\text{educ} < \tau) + \beta_2 \text{educ} \times \mathbf{1}(\text{educ} \ge \tau) + \beta_3 \text{exp} \\
+				                                   & + \beta_4 \text{MotherEduc} + \beta_5 \text{FatherEduc} + \beta_6 \text{broken}                                                                 \\
+				                                   & + \beta_7  \text{siblings} + \epsilon
+			      \end{split}
+		      \]
+		      \noindent
+		      where \( \tau \) is the threshold parameter, and
+		      \[
+			      \mathbf{1}(\text{Educ} < \tau) =
+			      \begin{cases}
+				      1 & \text{if } \text{Educ} < \tau, \\
+				      0 & \text{otherwise}
+			      \end{cases}
+			      \quad \text{and} \quad
+			      \mathbf{1}(\text{Educ} \ge \tau) =
+			      \begin{cases}
+				      1 & \text{if } \text{Educ} \ge \tau, \\
+				      0 & \text{otherwise}.
+			      \end{cases}
+		      \]	\end{enumerate}
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+	Using the \textbf{California test score date}, estimate the regression below using
+	Nonlinear Least Squares. Report you coefficient estimates and standard errors.
+	$$
+		TestScore = \beta_0 (1- e^{\beta_1(income - \beta_2)}) + \epsilon
+	$$
+\end{homeworkProblem}
+
+
+\begin{homeworkProblem}
+	Use the \textbf{Consumption.xlsx}. We have previously estimated the nonlinear consuption
+	function below using nonlinear least squares in class:
+	$$
+		C = \alpha + \beta Y^{\gamma} + \epsilon
+	$$
+	Where $C$ is the real consumption and $Y$ is the real disposable income. Alternatively, we can
+	assume that the error term has a normal distribution and estimate the nonlinear regression
+	above using the maximum likeligood estimation (MLE) approach, In particular, the MLE
+	approach maximizes the log-likelihood function given by:
+	$$
+		L(\alpha, \beta, \gamma, \sigma^2) = -\frac{n}{2} \log(\sigma^2) - \log(2\pi) - \frac{1}{2 \sigma^2} \sum_{i=1}^{n}(C_i - \alpha - \beta Y^{\gamma})^2
+	$$
+	Where $\sigma^2$ is the variance of the error term. Using a statistical programming language of you choice,
+	estimate the regression model using the maximum likelihood estimation approach. Your estimate are expected to
+	be similar to those in Table 7.1 of Green's textbook. Please submit the following:
+	\begin{enumerate}[(a)]
+		\item Your code used to preform the estimation.
+		\item The output of your estimation, including the estimated parameters and the error variance.
+	\end{enumerate}
+\end{homeworkProblem}
+
 \end{document}

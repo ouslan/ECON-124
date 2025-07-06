@@ -8,6 +8,7 @@ dependencies = [
     "arviz[all]>=0.21.0",
     "bambi>=0.15.0",
     "fastexcel>=0.14.0",
+    "linearmodels>=6.1",
     "matplotlib>=3.10.3",
     "numpy>=2.2.6",
     "pandas>=2.3.0",

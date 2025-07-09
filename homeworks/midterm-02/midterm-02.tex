@@ -233,11 +233,253 @@
 		      $$
 		      And report the usual and heteroskedasticity-robust standard errors. Are the robust standard
 		      errors always bigger than the non robust ones?
+
+		      \textbf{Answer:} It seems that the robust standard errors are generally larger than the non
+		      robust ones, but not neccesarily always the case.
+
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{OLS Regression Results: Children \textasciitilde Age, Age², Education, Electricity, Urban}
+			      \begin{tabular}{lcccccc}
+				      \hline
+				      \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                               & \textbf{t} & \textbf{P$>|t|$} & \textbf{[0.025} & \textbf{0.975]} \\
+				      \hline
+				      const                                & -4.2225        & 0.240                                            & -17.580    & 0.000            & -4.693          & -3.752          \\
+				      age                                  & 0.3409         & 0.017                                            & 20.652     & 0.000            & 0.309           & 0.373           \\
+				      age²                                 & -0.0027        & 0.000                                            & -10.086    & 0.000            & -0.003          & -0.002          \\
+				      education                            & -0.0752        & 0.006                                            & -11.948    & 0.000            & -0.088          & -0.063          \\
+				      electricity                          & -0.3100        & 0.069                                            & -4.493     & 0.000            & -0.445          & -0.175          \\
+				      urban                                & -0.2000        & 0.047                                            & -4.301     & 0.000            & -0.291          & -0.109          \\
+				      \hline
+				      \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                               \\
+				      \multicolumn{2}{l}{R-squared}        & 0.573          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Adj. R-squared}   & 0.573          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{F-statistic}      & 1170           & \multicolumn{4}{l}{(Prob $F$-statistic = 0.000)}                                                                     \\
+				      \multicolumn{2}{l}{No. Observations} & 4358           & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Residuals}     & 4352           & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Model}         & 5              & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Log-Likelihood}   & -7806.3        & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{AIC}              & 1.562e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{BIC}              & 1.566e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{7}{l}{Durbin-Watson: 1.883}                                                                                                                                     \\
+				      \multicolumn{7}{l}{Omnibus: 203.155, Prob(Omnibus): 0.000}                                                                                                                   \\
+				      \multicolumn{7}{l}{Jarque-Bera (JB): 715.135, Prob(JB): $5.13 \times 10^{-156}$}                                                                                             \\
+				      \multicolumn{7}{l}{Skew: 0.014, Kurtosis: 4.984}                                                                                                                             \\
+				      \multicolumn{7}{l}{Cond. No.: 1.07e+04}                                                                                                                                      \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{OLS Regression Results: Children \textasciitilde Age, Age², Education, Electricity, Urban}
+			      \begin{tabular}{lcccccc}
+				      \hline
+				      \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                               & \textbf{z} & \textbf{P$>|z|$} & \textbf{[0.025} & \textbf{0.975]} \\
+				      \hline
+				      const                                & -4.2225        & 0.244                                            & -17.316    & 0.000            & -4.700          & -3.745          \\
+				      age                                  & 0.3409         & 0.019                                            & 17.780     & 0.000            & 0.303           & 0.379           \\
+				      age²                                 & -0.0027        & 0.000                                            & -7.821     & 0.000            & -0.003          & -0.002          \\
+				      education                            & -0.0752        & 0.006                                            & -11.927    & 0.000            & -0.088          & -0.063          \\
+				      electricity                          & -0.3100        & 0.064                                            & -4.848     & 0.000            & -0.435          & -0.185          \\
+				      urban                                & -0.2000        & 0.045                                            & -4.399     & 0.000            & -0.289          & -0.111          \\
+				      \hline
+				      \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                               \\
+				      \multicolumn{2}{l}{R-squared}        & 0.573          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Adj. R-squared}   & 0.573          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{F-statistic}      & 1161           & \multicolumn{4}{l}{(Prob $F$-statistic = 0.000)}                                                                     \\
+				      \multicolumn{2}{l}{No. Observations} & 4358           & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Residuals}     & 4352           & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Model}         & 5              & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Log-Likelihood}   & -7806.3        & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{AIC}              & 1.562e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{BIC}              & 1.566e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{7}{l}{Durbin-Watson: 1.883}                                                                                                                                     \\
+				      \multicolumn{7}{l}{Omnibus: 203.155, Prob(Omnibus): 0.000}                                                                                                                   \\
+				      \multicolumn{7}{l}{Jarque-Bera (JB): 715.135, Prob(JB): $5.13 \times 10^{-156}$}                                                                                             \\
+				      \multicolumn{7}{l}{Skew: 0.014, Kurtosis: 4.984}                                                                                                                             \\
+				      \multicolumn{7}{l}{Cond. No.: 1.07e+04}                                                                                                                                      \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
+		      \pagebreak
+
+		      \begin{pythonbox}[Python Code]
+			      \inputminted{python}{code/prob1a.py}
+		      \end{pythonbox}
+
 		\item Add the three religious dummy variables and test whether they are jointly significant.
 		      What are the p-values for the nonrobust and robust tests?
+
+		      \textbf{Answer:} The p-values for the non-robust test is 0.0864, while the p-value for the
+		      robust test is 0.0911. It seems that robust tests are less likely to report
+		      something is significant, especially assuming standard errors are greater
+		      than non-robust ones.
+
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{OLS Regression Results: Children $\sim$ Age, Age², Education, Electricity, Urban, Spirit, Protest, Catholic}
+			      \begin{tabular}{lcccccc}
+				      \hline
+				      \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                               & \textbf{t} & \textbf{P$>|t|$} & \textbf{[0.025} & \textbf{0.975]} \\
+				      \hline
+				      Intercept                            & -4.3147        & 0.243                                            & -17.731    & 0.000            & -4.792          & -3.838          \\
+				      age                                  & 0.3419         & 0.017                                            & 20.696     & 0.000            & 0.309           & 0.374           \\
+				      age²                                 & -0.0028        & 0.000                                            & -10.139    & 0.000            & -0.003          & -0.002          \\
+				      education                            & -0.0762        & 0.006                                            & -11.796    & 0.000            & -0.089          & -0.064          \\
+				      electricity                          & -0.3057        & 0.069                                            & -4.429     & 0.000            & -0.441          & -0.170          \\
+				      urban                                & -0.2034        & 0.047                                            & -4.366     & 0.000            & -0.295          & -0.112          \\
+				      spirit                               & 0.1405         & 0.056                                            & 2.517      & 0.012            & 0.031           & 0.250           \\
+				      protest                              & 0.0754         & 0.065                                            & 1.156      & 0.248            & -0.052          & 0.203           \\
+				      catholic                             & 0.1174         & 0.083                                            & 1.407      & 0.160            & -0.046          & 0.281           \\
+				      \hline
+				      \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                               \\
+				      \multicolumn{2}{l}{R-squared}        & 0.574          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Adj. R-squared}   & 0.573          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{F-statistic}      & 732.6          & \multicolumn{4}{l}{(Prob $F$-statistic = 0.000)}                                                                     \\
+				      \multicolumn{2}{l}{No. Observations} & 4358           & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Residuals}     & 4349           & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Model}         & 8              & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Log-Likelihood}   & -7803.0        & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{AIC}              & 1.562e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{BIC}              & 1.568e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{7}{l}{Durbin-Watson: 1.887}                                                                                                                                     \\
+				      \multicolumn{7}{l}{Omnibus: 202.228, Prob(Omnibus): 0.000}                                                                                                                   \\
+				      \multicolumn{7}{l}{Jarque-Bera (JB): 709.030, Prob(JB): $1.09 \times 10^{-154}$}                                                                                             \\
+				      \multicolumn{7}{l}{Skew: 0.016, Kurtosis: 4.976}                                                                                                                             \\
+				      \multicolumn{7}{l}{Cond. No.: 1.09e+04}                                                                                                                                      \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{F-test Results}
+			      \begin{tabular}{lcc}
+				      \hline
+				      \textbf{Statistic}               & \textbf{Value} & \textbf{Notes} \\
+				      \hline
+				      F-statistic                      & 2.196          & -              \\
+				      p-value                          & 0.0864         & -              \\
+				      Degrees of Freedom (denominator) & 4350           & -              \\
+				      Degrees of Freedom (numerator)   & 3              & -              \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{OLS Regression Results: Children $\sim$ Age, Age², Education, Electricity, Urban, Spirit, Protest, Catholic (Robust Standard Errors)}
+			      \begin{tabular}{lcccccc}
+				      \hline
+				      \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                               & \textbf{z} & \textbf{P$>|z|$} & \textbf{[0.025} & \textbf{0.975]} \\
+				      \hline
+				      Intercept                            & -4.3147        & 0.248                                            & -17.389    & 0.000            & -4.801          & -3.828          \\
+				      age                                  & 0.3419         & 0.019                                            & 17.807     & 0.000            & 0.304           & 0.379           \\
+				      age²                                 & -0.0028        & 0.000                                            & -7.861     & 0.000            & -0.003          & -0.002          \\
+				      education                            & -0.0762        & 0.006                                            & -11.860    & 0.000            & -0.089          & -0.064          \\
+				      electricity                          & -0.3057        & 0.064                                            & -4.772     & 0.000            & -0.431          & -0.180          \\
+				      urban                                & -0.2034        & 0.046                                            & -4.456     & 0.000            & -0.293          & -0.114          \\
+				      spirit                               & 0.1405         & 0.056                                            & 2.487      & 0.013            & 0.030           & 0.251           \\
+				      protest                              & 0.0754         & 0.066                                            & 1.140      & 0.254            & -0.054          & 0.205           \\
+				      catholic                             & 0.1174         & 0.079                                            & 1.483      & 0.138            & -0.038          & 0.272           \\
+				      \hline
+				      \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                               \\
+				      \multicolumn{2}{l}{R-squared}        & 0.574          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Adj. R-squared}   & 0.573          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{F-statistic}      & 727.9          & \multicolumn{4}{l}{(Prob $F$-statistic = 0.000)}                                                                     \\
+				      \multicolumn{2}{l}{No. Observations} & 4358           & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Residuals}     & 4349           & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Model}         & 8              & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Log-Likelihood}   & -7803.0        & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{AIC}              & 1.562e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{BIC}              & 1.568e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{7}{l}{Durbin-Watson: 1.887}                                                                                                                                     \\
+				      \multicolumn{7}{l}{Omnibus: 202.228, Prob(Omnibus): 0.000}                                                                                                                   \\
+				      \multicolumn{7}{l}{Jarque-Bera (JB): 709.030, Prob(JB): $1.09 \times 10^{-154}$}                                                                                             \\
+				      \multicolumn{7}{l}{Skew: 0.016, Kurtosis: 4.976}                                                                                                                             \\
+				      \multicolumn{7}{l}{Cond. No.: 1.09e+04}                                                                                                                                      \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{F-test Results}
+			      \begin{tabular}{lcc}
+				      \hline
+				      \textbf{Statistic}               & \textbf{Value} & \textbf{Notes} \\
+				      \hline
+				      F-statistic                      & 2.156          & -              \\
+				      p-value                          & 0.0911         & -              \\
+				      Degrees of Freedom (denominator) & 4350           & -              \\
+				      Degrees of Freedom (numerator)   & 3              & -              \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
+		      \pagebreak
+
+		      \begin{pythonbox}[Python Code]
+			      \inputminted{python}{code/prob1b.py}
+		      \end{pythonbox}
+
 		\item From the regression in part (b), obtain the fitted values $\hat{y}$ and the residuals, $\hat{\epsilon}$.
 		      Regress $\hat{\epsilon}^2 \sim \hat{y}$, and $\hat{\epsilon}^2 \sim \hat{y}^2$ and test the joint significance of the
 		      two regressors.
+
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{OLS Regression Results: $\hat{u}^2 \sim \hat{y} + \hat{y}^2$}
+			      \begin{tabular}{lcccccc}
+				      \hline
+				      \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                                   & \textbf{t} & \textbf{P$>|t|$} & \textbf{[0.025} & \textbf{0.975]} \\
+				      \hline
+				      Intercept                            & 0.3126         & 0.111                                                & 2.807      & 0.005            & 0.094           & 0.531           \\
+				      $\hat{y}$                            & -0.1489        & 0.102                                                & -1.462     & 0.144            & -0.348          & 0.051           \\
+				      $\hat{y}^2$                          & 0.2668         & 0.020                                                & 13.607     & 0.000            & 0.228           & 0.305           \\
+				      \hline
+				      \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                                   \\
+				      \multicolumn{2}{l}{R-squared}        & 0.250          & \multicolumn{4}{l}{}                                                                                                     \\
+				      \multicolumn{2}{l}{Adj. R-squared}   & 0.250          & \multicolumn{4}{l}{}                                                                                                     \\
+				      \multicolumn{2}{l}{F-statistic}      & 726.1          & \multicolumn{4}{l}{(Prob $F$-statistic = 7.19e-273)}                                                                     \\
+				      \multicolumn{2}{l}{No. Observations} & 4358           & \multicolumn{4}{l}{}                                                                                                     \\
+				      \multicolumn{2}{l}{Df Residuals}     & 4355           & \multicolumn{4}{l}{}                                                                                                     \\
+				      \multicolumn{2}{l}{Df Model}         & 2              & \multicolumn{4}{l}{}                                                                                                     \\
+				      \multicolumn{2}{l}{Log-Likelihood}   & -11803         & \multicolumn{4}{l}{}                                                                                                     \\
+				      \multicolumn{2}{l}{AIC}              & 2.361e+04      & \multicolumn{4}{l}{}                                                                                                     \\
+				      \multicolumn{2}{l}{BIC}              & 2.363e+04      & \multicolumn{4}{l}{}                                                                                                     \\
+				      \multicolumn{7}{l}{Durbin-Watson: 1.947}                                                                                                                                         \\
+				      \multicolumn{7}{l}{Omnibus: 3446.975, Prob(Omnibus): 0.000}                                                                                                                      \\
+				      \multicolumn{7}{l}{Jarque-Bera (JB): 119444.435, Prob(JB): 0.000}                                                                                                                \\
+				      \multicolumn{7}{l}{Skew: 3.503, Kurtosis: 27.672}                                                                                                                                \\
+				      \multicolumn{7}{l}{Cond. No.: 31.4}                                                                                                                                              \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{F-test Results}
+			      \begin{tabular}{lcc}
+				      \hline
+				      \textbf{Statistic}               & \textbf{Value}          & \textbf{Notes} \\
+				      \hline
+				      F-statistic                      & 726.11                  & -              \\
+				      p-value                          & $7.19 \times 10^{-273}$ & -              \\
+				      Degrees of Freedom (denominator) & 4358                    & -              \\
+				      Degrees of Freedom (numerator)   & 2                       & -              \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
+		      \pagebreak
+
+		      \begin{pythonbox}[Python Code]
+			      \inputminted{python}{code/prob1c.py}
+		      \end{pythonbox}
+
 	\end{enumerate}
 \end{homeworkProblem}
 
@@ -263,110 +505,6 @@
 			            seasonality in assaults? That is, do there tend to be more assaults in
 			            some months than others? Explain.
 
-			            \textbf{Answer:} It seems that the robust standard errors are generally larger than the non
-			            robust ones, but not neccesarily always the case.
-
-			            \begin{table}[htbp]
-				            \centering
-				            \caption{OLS Regression Results: Children \textasciitilde Age, Age², Education, Electricity, Urban}
-				            \begin{tabular}{lcccccc}
-					            \hline
-					            \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                               & \textbf{t} & \textbf{P$>|t|$} & \textbf{[0.025} & \textbf{0.975]} \\
-					            \hline
-					            const                                & -4.2225        & 0.240                                            & -17.580    & 0.000            & -4.693          & -3.752          \\
-					            age                                  & 0.3409         & 0.017                                            & 20.652     & 0.000            & 0.309           & 0.373           \\
-					            age²                                 & -0.0027        & 0.000                                            & -10.086    & 0.000            & -0.003          & -0.002          \\
-					            education                            & -0.0752        & 0.006                                            & -11.948    & 0.000            & -0.088          & -0.063          \\
-					            electricity                          & -0.3100        & 0.069                                            & -4.493     & 0.000            & -0.445          & -0.175          \\
-					            urban                                & -0.2000        & 0.047                                            & -4.301     & 0.000            & -0.291          & -0.109          \\
-					            \hline
-					            \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                               \\
-					            \multicolumn{2}{l}{R-squared}        & 0.573          & \multicolumn{4}{l}{}                                                                                                 \\
-					            \multicolumn{2}{l}{Adj. R-squared}   & 0.573          & \multicolumn{4}{l}{}                                                                                                 \\
-					            \multicolumn{2}{l}{F-statistic}      & 1170           & \multicolumn{4}{l}{(Prob $F$-statistic = 0.000)}                                                                     \\
-					            \multicolumn{2}{l}{No. Observations} & 4358           & \multicolumn{4}{l}{}                                                                                                 \\
-					            \multicolumn{2}{l}{Df Residuals}     & 4352           & \multicolumn{4}{l}{}                                                                                                 \\
-					            \multicolumn{2}{l}{Df Model}         & 5              & \multicolumn{4}{l}{}                                                                                                 \\
-					            \multicolumn{2}{l}{Log-Likelihood}   & -7806.3        & \multicolumn{4}{l}{}                                                                                                 \\
-					            \multicolumn{2}{l}{AIC}              & 1.562e+04      & \multicolumn{4}{l}{}                                                                                                 \\
-					            \multicolumn{2}{l}{BIC}              & 1.566e+04      & \multicolumn{4}{l}{}                                                                                                 \\
-					            \multicolumn{7}{l}{Durbin-Watson: 1.883}                                                                                                                                     \\
-					            \multicolumn{7}{l}{Omnibus: 203.155, Prob(Omnibus): 0.000}                                                                                                                   \\
-					            \multicolumn{7}{l}{Jarque-Bera (JB): 715.135, Prob(JB): $5.13 \times 10^{-156}$}                                                                                             \\
-					            \multicolumn{7}{l}{Skew: 0.014, Kurtosis: 4.984}                                                                                                                             \\
-					            \multicolumn{7}{l}{Cond. No.: 1.07e+04}                                                                                                                                      \\
-					            \hline
-				            \end{tabular}
-			            \end{table}
-
-			            \begin{table}[htbp]
-				            \centering
-				            \caption{F-test Results}
-				            \begin{tabular}{lcc}
-					            \hline
-					            \textbf{Statistic}               & \textbf{Value} & \textbf{Notes} \\
-					            \hline
-					            F-statistic                      & 2.196          & -              \\
-					            p-value                          & 0.0864         & -              \\
-					            Degrees of Freedom (denominator) & 4350           & -              \\
-					            Degrees of Freedom (numerator)   & 3              & -              \\
-					            \hline
-				            \end{tabular}
-			            \end{table}
-
-			            \begin{table}[htbp]
-				            \centering
-				            \caption{OLS Regression Results: Children \textasciitilde Age, Age², Education, Electricity, Urban}
-				            \begin{tabular}{lcccccc}
-					            \hline
-					            \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                               & \textbf{z} & \textbf{P$>|z|$} & \textbf{[0.025} & \textbf{0.975]} \\
-					            \hline
-					            const                                & -4.2225        & 0.244                                            & -17.316    & 0.000            & -4.700          & -3.745          \\
-					            age                                  & 0.3409         & 0.019                                            & 17.780     & 0.000            & 0.303           & 0.379           \\
-					            age²                                 & -0.0027        & 0.000                                            & -7.821     & 0.000            & -0.003          & -0.002          \\
-					            education                            & -0.0752        & 0.006                                            & -11.927    & 0.000            & -0.088          & -0.063          \\
-					            electricity                          & -0.3100        & 0.064                                            & -4.848     & 0.000            & -0.435          & -0.185          \\
-					            urban                                & -0.2000        & 0.045                                            & -4.399     & 0.000            & -0.289          & -0.111          \\
-					            \hline
-					            \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                               \\
-					            \multicolumn{2}{l}{R-squared}        & 0.573          & \multicolumn{4}{l}{}                                                                                                 \\
-					            \multicolumn{2}{l}{Adj. R-squared}   & 0.573          & \multicolumn{4}{l}{}                                                                                                 \\
-					            \multicolumn{2}{l}{F-statistic}      & 1161           & \multicolumn{4}{l}{(Prob $F$-statistic = 0.000)}                                                                     \\
-					            \multicolumn{2}{l}{No. Observations} & 4358           & \multicolumn{4}{l}{}                                                                                                 \\
-					            \multicolumn{2}{l}{Df Residuals}     & 4352           & \multicolumn{4}{l}{}                                                                                                 \\
-					            \multicolumn{2}{l}{Df Model}         & 5              & \multicolumn{4}{l}{}                                                                                                 \\
-					            \multicolumn{2}{l}{Log-Likelihood}   & -7806.3        & \multicolumn{4}{l}{}                                                                                                 \\
-					            \multicolumn{2}{l}{AIC}              & 1.562e+04      & \multicolumn{4}{l}{}                                                                                                 \\
-					            \multicolumn{2}{l}{BIC}              & 1.566e+04      & \multicolumn{4}{l}{}                                                                                                 \\
-					            \multicolumn{7}{l}{Durbin-Watson: 1.883}                                                                                                                                     \\
-					            \multicolumn{7}{l}{Omnibus: 203.155, Prob(Omnibus): 0.000}                                                                                                                   \\
-					            \multicolumn{7}{l}{Jarque-Bera (JB): 715.135, Prob(JB): $5.13 \times 10^{-156}$}                                                                                             \\
-					            \multicolumn{7}{l}{Skew: 0.014, Kurtosis: 4.984}                                                                                                                             \\
-					            \multicolumn{7}{l}{Cond. No.: 1.07e+04}                                                                                                                                      \\
-					            \hline
-				            \end{tabular}
-			            \end{table}
-
-			            \begin{table}[htbp]
-				            \centering
-				            \caption{F-test Results}
-				            \begin{tabular}{lcc}
-					            \hline
-					            \textbf{Statistic}               & \textbf{Value} & \textbf{Notes} \\
-					            \hline
-					            F-statistic                      & 2.156          & -              \\
-					            p-value                          & 0.0911         & -              \\
-					            Degrees of Freedom (denominator) & 4350           & -              \\
-					            Degrees of Freedom (numerator)   & 3              & -              \\
-					            \hline
-				            \end{tabular}
-			            \end{table}
-
-			            \pagebreak
-
-			            \begin{pythonbox}[Python Code]
-				            \inputminted{python}{code/prob1a.py}
-			            \end{pythonbox}
 
 			      \item Regress total movie attendance (attend = attend\_v + attend\_m +
 			            attend\_n) on the year and month indicators. Is there evidence of

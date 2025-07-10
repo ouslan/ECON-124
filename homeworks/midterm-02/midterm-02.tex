@@ -1435,7 +1435,7 @@
 
 \end{homeworkProblem}
 
-% Homework Problem 4
+% Homework Problem 5
 \begin{homeworkProblem}
 	Use the \textbf{Consumption.xlsx}. We have previously estimated the nonlinear consuption
 	function below using nonlinear least squares in class:
@@ -1454,7 +1454,26 @@
 	be similar to those in Table 7.1 of Green's textbook. Please submit the following:
 	\begin{enumerate}[(a)]
 		\item Your code used to preform the estimation.
+		      \begin{pythonbox}[Python Code]
+			      \inputminted{python}{code/prob5.py}
+		      \end{pythonbox}
+
 		\item The output of your estimation, including the estimated parameters and the error variance.
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{Estimated Parameters}
+			      \begin{tabular}{lc}
+				      \hline
+				      \textbf{Parameter}         & \textbf{Estimate} \\
+				      \hline
+				      Alpha ($\alpha$)           & 49.2447           \\
+				      Beta ($\beta$)             & 0.3588            \\
+				      Gamma ($\gamma$)           & 1.0691            \\
+				      Sigma-squared ($\sigma^2$) & 1701.1853         \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
 	\end{enumerate}
 \end{homeworkProblem}
 

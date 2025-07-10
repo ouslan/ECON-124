@@ -3,8 +3,6 @@ import numpy as np
 from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
 
-rng = np.random.default_rng(seed=787)
-
 df = pl.read_excel("data/CASchools2.xlsx").sort("avginc")
 
 def func(income,b0,b1,b2):

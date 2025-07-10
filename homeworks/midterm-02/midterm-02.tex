@@ -483,6 +483,8 @@
 	\end{enumerate}
 \end{homeworkProblem}
 
+
+% Problem 2
 \begin{homeworkProblem}
 	Use the data set \textbf{Movies}
 
@@ -505,10 +507,129 @@
 			            seasonality in assaults? That is, do there tend to be more assaults in
 			            some months than others? Explain.
 
+			            \textbf{Answer:} In comparison to January there seems to be more assaults during late spring
+			            and early fall, especially in the summer. (May to Sepetember) So there do
+			            seem to be some seasonality as assaults are lower during winter months.
+
+
+			            \begin{table}[htbp]
+				            \centering
+				            \caption{OLS Regression Results: $\ln(\text{assaults})$}
+				            \begin{tabular}{lcccccc}
+					            \hline
+					            \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                               & \textbf{t} & \textbf{P$>|t|$} & \textbf{[0.025} & \textbf{0.975]} \\
+					            \hline
+					            Intercept                            & 6.7276         & 0.012                                            & 561.447    & 0.000            & 6.704           & 6.751           \\
+					            year2                                & 0.6949         & 0.012                                            & 60.043     & 0.000            & 0.672           & 0.718           \\
+					            year3                                & 1.0084         & 0.012                                            & 87.090     & 0.000            & 0.986           & 1.031           \\
+					            year4                                & 1.2454         & 0.012                                            & 107.557    & 0.000            & 1.223           & 1.268           \\
+					            year5                                & 1.4145         & 0.012                                            & 122.757    & 0.000            & 1.392           & 1.437           \\
+					            year6                                & 1.6953         & 0.012                                            & 146.577    & 0.000            & 1.673           & 1.718           \\
+					            year7                                & 1.8509         & 0.012                                            & 159.962    & 0.000            & 1.828           & 1.874           \\
+					            year8                                & 1.9013         & 0.012                                            & 164.285    & 0.000            & 1.879           & 1.924           \\
+					            year9                                & 1.9437         & 0.012                                            & 167.868    & 0.000            & 1.921           & 1.966           \\
+					            year10                               & 2.0702         & 0.012                                            & 175.002    & 0.000            & 2.047           & 2.093           \\
+					            month2                               & 0.0169         & 0.013                                            & 1.297      & 0.195            & -0.009          & 0.042           \\
+					            month3                               & 0.0799         & 0.013                                            & 6.379      & 0.000            & 0.055           & 0.105           \\
+					            month4                               & 0.1297         & 0.013                                            & 10.245     & 0.000            & 0.105           & 0.155           \\
+					            month5                               & 0.1802         & 0.012                                            & 14.480     & 0.000            & 0.156           & 0.205           \\
+					            month6                               & 0.1663         & 0.013                                            & 13.200     & 0.000            & 0.142           & 0.191           \\
+					            month7                               & 0.1739         & 0.013                                            & 13.815     & 0.000            & 0.149           & 0.199           \\
+					            month8                               & 0.1768         & 0.012                                            & 14.200     & 0.000            & 0.152           & 0.201           \\
+					            month9                               & 0.1977         & 0.013                                            & 15.599     & 0.000            & 0.173           & 0.223           \\
+					            month10                              & 0.1417         & 0.012                                            & 11.390     & 0.000            & 0.117           & 0.166           \\
+					            month11                              & 0.0248         & 0.013                                            & 1.971      & 0.049            & 0.00007         & 0.050           \\
+					            month12                              & -0.0054        & 0.013                                            & -0.429     & 0.668            & -0.030          & 0.019           \\
+					            \hline
+					            \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                               \\
+					            \multicolumn{2}{l}{R-squared}        & 0.992          & \multicolumn{4}{l}{}                                                                                                 \\
+					            \multicolumn{2}{l}{Adj. R-squared}   & 0.991          & \multicolumn{4}{l}{}                                                                                                 \\
+					            \multicolumn{2}{l}{F-statistic}      & 2948           & \multicolumn{4}{l}{(Prob $F$-statistic = 0.000)}                                                                     \\
+					            \multicolumn{2}{l}{No. Observations} & 516            & \multicolumn{4}{l}{}                                                                                                 \\
+					            \multicolumn{2}{l}{Df Residuals}     & 495            & \multicolumn{4}{l}{}                                                                                                 \\
+					            \multicolumn{2}{l}{Df Model}         & 20             & \multicolumn{4}{l}{}                                                                                                 \\
+					            \multicolumn{2}{l}{Log-Likelihood}   & 741.74         & \multicolumn{4}{l}{}                                                                                                 \\
+					            \multicolumn{2}{l}{AIC}              & -1441          & \multicolumn{4}{l}{}                                                                                                 \\
+					            \multicolumn{2}{l}{BIC}              & -1352          & \multicolumn{4}{l}{}                                                                                                 \\
+					            \multicolumn{7}{l}{Durbin-Watson: 1.997}                                                                                                                                     \\
+					            \multicolumn{7}{l}{Omnibus: 147.335, Prob(Omnibus): 0.000}                                                                                                                   \\
+					            \multicolumn{7}{l}{Jarque-Bera (JB): 1613.470, Prob(JB): 0.000}                                                                                                              \\
+					            \multicolumn{7}{l}{Skew: 0.907, Kurtosis: 11.471}                                                                                                                            \\
+					            \multicolumn{7}{l}{Cond. No.: 13.5}                                                                                                                                          \\
+					            \hline
+				            \end{tabular}
+			            \end{table}
+
+			            \pagebreak
+
+			            \begin{pythonbox}[Python Code]
+				            \inputminted{python}{code/prob2ai.py}
+			            \end{pythonbox}
 
 			      \item Regress total movie attendance (attend = attend\_v + attend\_m +
 			            attend\_n) on the year and month indicators. Is there evidence of
 			            seasonality in movie attendance? Explain.
+
+			            \textbf{Answer:} In comparison to january there seems to be more movie attendance during the
+			            summer, especially in June, July, and oddly November. One could argue the
+			            re is seasonality, but November has an odd peak in movie attendance, which
+			            makes me think maybe attendance goes along with another variable like relea
+			            se date for movies.
+
+			            \begin{table}[htbp]
+				            \centering
+				            \caption{OLS Regression Results: attendance}
+				            \begin{tabular}{lcccccc}
+					            \hline
+					            \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                                  & \textbf{t} & \textbf{P$>|t|$} & \textbf{[0.025} & \textbf{0.975]} \\
+					            \hline
+					            Intercept                            & 16.0396        & 0.737                                               & 21.770     & 0.000            & 14.592          & 17.487          \\
+					            year2                                & 0.8972         & 0.712                                               & 1.261      & 0.208            & -0.501          & 2.295           \\
+					            year3                                & 2.0311         & 0.712                                               & 2.853      & 0.005            & 0.632           & 3.430           \\
+					            year4                                & 3.3991         & 0.712                                               & 4.774      & 0.000            & 2.000           & 4.798           \\
+					            year5                                & 2.9515         & 0.709                                               & 4.166      & 0.000            & 1.559           & 4.344           \\
+					            year6                                & 2.5120         & 0.711                                               & 3.532      & 0.000            & 1.115           & 3.909           \\
+					            year7                                & 3.1224         & 0.711                                               & 4.389      & 0.000            & 1.725           & 4.520           \\
+					            year8                                & 5.0412         & 0.712                                               & 7.084      & 0.000            & 3.643           & 6.439           \\
+					            year9                                & 4.4057         & 0.712                                               & 6.188      & 0.000            & 3.007           & 5.805           \\
+					            year10                               & 3.7276         & 0.727                                               & 5.125      & 0.000            & 2.298           & 5.157           \\
+					            month2                               & -0.6613        & 0.800                                               & -0.827     & 0.409            & -2.233          & 0.911           \\
+					            month3                               & -2.1685        & 0.771                                               & -2.814     & 0.005            & -3.683          & -0.654          \\
+					            month4                               & -3.4033        & 0.779                                               & -4.371     & 0.000            & -4.933          & -1.873          \\
+					            month5                               & 0.9224         & 0.765                                               & 1.205      & 0.229            & -0.581          & 2.426           \\
+					            month6                               & 2.9167         & 0.775                                               & 3.765      & 0.000            & 1.395           & 4.439           \\
+					            month7                               & 5.3937         & 0.774                                               & 6.969      & 0.000            & 3.873           & 6.914           \\
+					            month8                               & 1.2123         & 0.766                                               & 1.584      & 0.114            & -0.292          & 2.716           \\
+					            month9                               & -5.4252        & 0.779                                               & -6.962     & 0.000            & -6.956          & -3.894          \\
+					            month10                              & -3.3259        & 0.765                                               & -4.347     & 0.000            & -4.829          & -1.823          \\
+					            month11                              & 3.8795         & 0.774                                               & 5.009      & 0.000            & 2.358           & 5.401           \\
+					            month12                              & 0.6774         & 0.779                                               & 0.869      & 0.385            & -0.854          & 2.209           \\
+					            \hline
+					            \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                                  \\
+					            \multicolumn{2}{l}{R-squared}        & 0.480          & \multicolumn{4}{l}{}                                                                                                    \\
+					            \multicolumn{2}{l}{Adj. R-squared}   & 0.459          & \multicolumn{4}{l}{}                                                                                                    \\
+					            \multicolumn{2}{l}{F-statistic}      & 22.86          & \multicolumn{4}{l}{(Prob $F$-statistic = 7.85e-58)}                                                                     \\
+					            \multicolumn{2}{l}{No. Observations} & 516            & \multicolumn{4}{l}{}                                                                                                    \\
+					            \multicolumn{2}{l}{Df Residuals}     & 495            & \multicolumn{4}{l}{}                                                                                                    \\
+					            \multicolumn{2}{l}{Df Model}         & 20             & \multicolumn{4}{l}{}                                                                                                    \\
+					            \multicolumn{2}{l}{Log-Likelihood}   & -1383.6        & \multicolumn{4}{l}{}                                                                                                    \\
+					            \multicolumn{2}{l}{AIC}              & 2809           & \multicolumn{4}{l}{}                                                                                                    \\
+					            \multicolumn{2}{l}{BIC}              & 2898           & \multicolumn{4}{l}{}                                                                                                    \\
+					            \multicolumn{7}{l}{Durbin-Watson: 1.439}                                                                                                                                        \\
+					            \multicolumn{7}{l}{Omnibus: 69.939, Prob(Omnibus): 0.000}                                                                                                                       \\
+					            \multicolumn{7}{l}{Jarque-Bera (JB): 126.992, Prob(JB): 2.65e-28}                                                                                                               \\
+					            \multicolumn{7}{l}{Skew: 0.808, Kurtosis: 4.816}                                                                                                                                \\
+					            \multicolumn{7}{l}{Cond. No.: 13.5}                                                                                                                                             \\
+					            \hline
+				            \end{tabular}
+			            \end{table}
+
+			            \pagebreak
+
+			            \begin{pythonbox}[Python Code]
+				            \inputminted{python}{code/prob2ai.py}
+			            \end{pythonbox}
+
 		      \end{enumerate}
 		\item Regress ln\_assaults on attend\_v, attend\_m, attend\_n, the year and month
 		      indicators, and the weather and holiday control variables available in the data set
@@ -516,49 +637,409 @@
 			      \item Based on the regression, does viewing a strongly violent movie increase
 			            or decrease assaults? By how much? Is the estimated effect statistically
 			            significant?
+
+			            \textbf{Answer:} When taking into account all the controls, it seems that viewing a
+			            strongly violent movie decreases assaults by 0.3 percent, which is significant
+			            since it's associated p-value is below 0.01.
+
+			            \begin{table}[htbp]
+				            \centering
+				            \caption{OLS Regression Results: ln\_assaults}
+				            \begin{tabular}{lcccccc}
+					            \hline
+					            \textbf{Variable} & \textbf{Coef.} & \textbf{Std. Err.} & \textbf{t} & \textbf{P$>|t|$} & \textbf{[0.025} & \textbf{0.975]} \\
+					            \hline
+					            Intercept         & 6.9143         & 0.017              & 403.245    & 0.000            & 6.881           & 6.948           \\
+					            attend\_v         & -0.0032        & 0.001              & -3.171     & 0.002            & -0.005          & -0.001          \\
+					            attend\_m         & -0.0031        & 0.001              & -4.742     & 0.000            & -0.004          & -0.002          \\
+					            attend\_n         & -0.0021        & 0.001              & -3.194     & 0.001            & -0.003          & -0.001          \\
+					            h\_chris          & -0.0879        & 0.023              & -3.744     & 0.000            & -0.134          & -0.042          \\
+					            h\_newyr          & 0.2453         & 0.023              & 10.700     & 0.000            & 0.200           & 0.290           \\
+					            h\_easter         & -0.0369        & 0.015              & -2.537     & 0.012            & -0.066          & -0.008          \\
+					            h\_july4          & 0.0352         & 0.020              & 1.736      & 0.083            & -0.005          & 0.075           \\
+					            h\_mem            & 0.0059         & 0.015              & 0.397      & 0.691            & -0.023          & 0.035           \\
+					            h\_labor          & 0.0241         & 0.014              & 1.697      & 0.090            & -0.004          & 0.052           \\
+					            w\_maxa           & 0.1099         & 0.013              & 8.155      & 0.000            & 0.083           & 0.136           \\
+					            w\_maxb           & 0.1107         & 0.019              & 5.971      & 0.000            & 0.074           & 0.147           \\
+					            w\_maxc           & 0.0423         & 0.070              & 0.607      & 0.544            & -0.095          & 0.179           \\
+					            w\_mina           & -0.3405        & 0.040              & -8.599     & 0.000            & -0.418          & -0.263          \\
+					            w\_minb           & -0.1725        & 0.027              & -6.394     & 0.000            & -0.226          & -0.120          \\
+					            w\_minc           & -0.1196        & 0.017              & -7.126     & 0.000            & -0.153          & -0.087          \\
+					            w\_rain           & -0.0323        & 0.013              & -2.518     & 0.012            & -0.057          & -0.007          \\
+					            w\_snow           & -0.0612        & 0.030              & -2.057     & 0.040            & -0.120          & -0.003          \\
+				            \end{tabular}
+			            \end{table}
+
+			            \pagebreak
+			            \begin{table}[htbp]
+				            \centering
+				            \caption{OLS Regression Results: ln\_assaults}
+				            \begin{tabular}{lcccccc}
+					            \hline
+					            \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                            & \textbf{t} & \textbf{P$>|t|$} & \textbf{[0.025} & \textbf{0.975]} \\
+					            \hline
+					            year2                                & 0.7008         & 0.009                                         & 81.931     & 0.000            & 0.684           & 0.718           \\
+					            year3                                & 1.0171         & 0.009                                         & 116.936    & 0.000            & 1.000           & 1.034           \\
+					            year4                                & 1.2267         & 0.009                                         & 138.859    & 0.000            & 1.209           & 1.244           \\
+					            year5                                & 1.3891         & 0.009                                         & 159.693    & 0.000            & 1.372           & 1.406           \\
+					            year6                                & 1.6883         & 0.009                                         & 196.902    & 0.000            & 1.671           & 1.705           \\
+					            year7                                & 1.8395         & 0.009                                         & 207.295    & 0.000            & 1.822           & 1.857           \\
+					            year8                                & 1.8984         & 0.009                                         & 206.170    & 0.000            & 1.880           & 1.916           \\
+					            year9                                & 1.9501         & 0.009                                         & 221.146    & 0.000            & 1.933           & 1.967           \\
+					            year10                               & 2.0721         & 0.009                                         & 229.747    & 0.000            & 2.054           & 2.090           \\
+					            month2                               & -0.0073        & 0.010                                         & -0.759     & 0.448            & -0.026          & 0.012           \\
+					            month3                               & 0.0126         & 0.010                                         & 1.241      & 0.215            & -0.007          & 0.032           \\
+					            month4                               & 0.0019         & 0.012                                         & 0.150      & 0.881            & -0.023          & 0.026           \\
+					            month5                               & 0.0079         & 0.015                                         & 0.546      & 0.585            & -0.021          & 0.037           \\
+					            month6                               & -0.0290        & 0.016                                         & -1.852     & 0.065            & -0.060          & 0.002           \\
+					            month7                               & -0.0343        & 0.018                                         & -1.929     & 0.054            & -0.069          & 0.001           \\
+					            month8                               & -0.0385        & 0.017                                         & -2.280     & 0.023            & -0.072          & -0.005          \\
+					            month9                               & -0.0129        & 0.015                                         & -0.846     & 0.398            & -0.043          & 0.017           \\
+					            month10                              & -0.0025        & 0.013                                         & -0.197     & 0.844            & -0.027          & 0.022           \\
+					            month11                              & -0.0432        & 0.011                                         & -4.006     & 0.000            & -0.064          & -0.022          \\
+					            month12                              & -0.0305        & 0.010                                         & -3.084     & 0.002            & -0.050          & -0.011          \\
+					            \hline
+					            \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                            \\
+					            \multicolumn{2}{l}{R-squared}        & 0.996          & \multicolumn{4}{l}{}                                                                                              \\
+					            \multicolumn{2}{l}{Adj. R-squared}   & 0.996          & \multicolumn{4}{l}{}                                                                                              \\
+					            \multicolumn{2}{l}{F-statistic}      & 3139.0         & \multicolumn{4}{l}{(Prob F-statistic = 0.00)}                                                                     \\
+					            \multicolumn{2}{l}{No. Observations} & 516            & \multicolumn{4}{l}{}                                                                                              \\
+					            \multicolumn{2}{l}{Df Residuals}     & 478            & \multicolumn{4}{l}{}                                                                                              \\
+					            \multicolumn{2}{l}{Df Model}         & 37             & \multicolumn{4}{l}{}                                                                                              \\
+					            \multicolumn{2}{l}{Log-Likelihood}   & 924.66         & \multicolumn{4}{l}{}                                                                                              \\
+					            \multicolumn{2}{l}{AIC}              & -1773.0        & \multicolumn{4}{l}{}                                                                                              \\
+					            \multicolumn{2}{l}{BIC}              & -1612.0        & \multicolumn{4}{l}{}                                                                                              \\
+					            \multicolumn{7}{l}{Durbin-Watson: 1.917}                                                                                                                                  \\
+					            \multicolumn{7}{l}{Omnibus: 126.823, Prob(Omnibus): 0.000}                                                                                                                \\
+					            \multicolumn{7}{l}{Jarque-Bera (JB): 1910.561, Prob(JB): 0.00}                                                                                                            \\
+					            \multicolumn{7}{l}{Skew: -0.612, Kurtosis: 12.347}                                                                                                                        \\
+					            \multicolumn{7}{l}{Cond. No.: 474}                                                                                                                                        \\
+					            \hline
+				            \end{tabular}
+			            \end{table}
+
+
+			            \pagebreak
+
+			            \begin{pythonbox}[Python Code]
+				            \inputminted{python}{code/prob2bi.py}
+			            \end{pythonbox}
+
+			            \pagebreak
 			      \item Does attendance at strongly violent movies affect assaults differently
 			            than attendance at moderately violent movies? Differently than
 			            attendance at nonviolent movies?
+
+			            \textbf{Answer:} after doing the test we get a p value of 0.000 thus we reject the null hypothesis of that no
+			            of the moves have an impact on assault and thus conlude there is significant evidence to conclude
+			            that there is an association between the movies and assaults.
+
+
+			            \begin{table}[htbp]
+				            \centering
+				            \caption{F-test Results}
+				            \begin{tabular}{lcc}
+					            \hline
+					            \textbf{Statistic}               & \textbf{Value}        & \textbf{Notes} \\
+					            \hline
+					            F-statistic                      & 8.12                  & -              \\
+					            p-value                          & $2.77 \times 10^{-5}$ & -              \\
+					            Degrees of Freedom (denominator) & 478                   & -              \\
+					            Degrees of Freedom (numerator)   & 3                     & -              \\
+					            \hline
+				            \end{tabular}
+			            \end{table}
+
+
+			            \begin{pythonbox}[Python Code]
+				            \inputminted{python}{code/prob2bii.py}
+			            \end{pythonbox}
+
+
 			      \item A strongly violent blockbuster movie is released, and the weekend’s
 			            attendance at strongly violent movies increases by 6 million; meanwhile,
 			            attendance falls by 2 million for moderately violent movies and by 1
 			            million for nonviolent movies. What is the predicted effect on assaults?
 			            Construct a 95\% confidence interval for the change in assaults.
-			      \item It is difficult to control for all the variables that affect assaults and that might be
-			            correlated with movie attendance. For example, the effect of the weather on
-			            assaults and movie attendance is only crudely approximated by the weather
-			            variables in the data set. However, the data set does include a set of instruments,
-			            pr\_attend\_v, pr\_attend\_m, and pr\_attend\_n, that are correlated with attendance
-			            but are (arguably) uncorrelated with weekend-specific factors (such as the
-			            weather) that affect both assaults and movie attendance. These instruments use
-			            historical attendance patterns, not information on a particular weekend, to predict
-			            a film’s attendance in a given weekend. For example, if a film’s attendance is
-			            high in the second week of its release, then this can be used to predict that its
-			            attendance was also high in the first week of its release. (The details of the
-			            construction of these instruments are available in the Dahl and DellaVigna’s
-			            paper on Canvas) Run the regression from part (b) (including year, month,
-			            holiday, and weather controls) but now using pr\_attend\_v, pr\_attend\_m, and
-			            pr\_attend\_n as instruments for attend\_v, attend\_m, and attend\_n. Use this
-			            regression to answer (b)(i)–(b)(iii).
-			      \item It is difficult to control for all the variables that affect assaults and that might be
-			            correlated with movie attendance. For example, the effect of the weather on
-			            assaults and movie attendance is only crudely approximated by the weather
-			            variables in the data set. However, the data set does include a set of instruments,
-			            pr\_attend\_v, pr\_attend\_m, and pr\_attend\_n, that are correlated with attendance
-			            but are (arguably) uncorrelated with weekend-specific factors (such as the
-			            weather) that affect both assaults and movie attendance. These instruments use
-			            historical attendance patterns, not information on a particular weekend, to predict
-			            a film’s attendance in a given weekend. For example, if a film’s attendance is
-			            high in the second week of its release, then this can be used to predict that its
-			            attendance was also high in the first week of its release. (The details of the
-			            construction of these instruments are available in the Dahl and DellaVigna’s
-			            paper on Canvas) Run the regression from part (b) (including year, month,
-			            holiday, and weather controls) but now using pr\_attend\_v, pr\_attend\_m, and
-			            pr\_attend\_n as instruments for attend\_v, attend\_m, and attend\_n. Use this
-			            regression to answer (b)(i)–(b)(iii).
-			      \item Based on your analysis, what do you conclude about the effect of violent movies
-			            on (short-run) violent behavior?
+
+			            \begin{table}[htbp]
+				            \centering
+				            \caption{Predicted Percentage Change in Assaults}
+				            \begin{tabular}{l c}
+					            \hline
+					            \textbf{Statistic}              & \textbf{Value}     \\
+					            \hline
+					            Predicted \% change in assaults & -1.06\%            \\
+					            95\% Confidence Interval (CI)   & [-2.09\%, -0.01\%] \\
+					            \hline
+				            \end{tabular}
+			            \end{table}
+
+			            \begin{pythonbox}[Python Code]
+				            \inputminted{python}{code/prob2biii.py}
+			            \end{pythonbox}
+
+
 		      \end{enumerate}
+		\item It is difficult to control for all the variables that affect assaults and that might be
+		      correlated with movie attendance. For example, the effect of the weather on
+		      assaults and movie attendance is only crudely approximated by the weather
+		      variables in the data set. However, the data set does include a set of instruments,
+		      pr\_attend\_v, pr\_attend\_m, and pr\_attend\_n, that are correlated with attendance
+		      but are (arguably) uncorrelated with weekend-specific factors (such as the
+		      weather) that affect both assaults and movie attendance. These instruments use
+		      historical attendance patterns, not information on a particular weekend, to predict
+		      a film’s attendance in a given weekend. For example, if a film’s attendance is
+		      high in the second week of its release, then this can be used to predict that its
+		      attendance was also high in the first week of its release. (The details of the
+		      construction of these instruments are available in the Dahl and DellaVigna’s
+		      paper on Canvas) Run the regression from part (b) (including year, month,
+		      holiday, and weather controls) but now using pr\_attend\_v, pr\_attend\_m, and
+		      pr\_attend\_n as instruments for attend\_v, attend\_m, and attend\_n. Use this
+		      regression to answer (b)(i)–(b)(iii).
+		      \begin{enumerate}[(i)]
+			      \item
+			            \textbf{Answer:} When taking into account all the controls, it seems that viewing a
+			            strongly violent movie decreases assaults by 9.6 percent, which is significant
+			            since it's associated p-value is below 0.00.
+
+			            \begin{table}[htbp]
+				            \centering
+				            \caption{IV-2SLS Estimation Results: ln\_assaults}
+				            \begin{tabular}{lcccccc}
+					            \hline
+					            \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                                & \textbf{t-stat} & \textbf{P-value} & \textbf{[0.025} & \textbf{0.975]} \\
+					            \hline
+					            attend\_m                            & 0.0958         & 0.0144                                            & 6.6340          & 0.0000           & 0.0675          & 0.1241          \\
+					            attend\_n                            & 0.1246         & 0.0132                                            & 9.4294          & 0.0000           & 0.0987          & 0.1505          \\
+					            h\_chris                             & -1.0922        & 0.5642                                            & -1.9359         & 0.0529           & -2.1979         & 0.0136          \\
+					            h\_newyr                             & -0.9118        & 0.5940                                            & -1.5350         & 0.1248           & -2.0761         & 0.2525          \\
+					            h\_easter                            & -0.0891        & 0.1748                                            & -0.5096         & 0.6103           & -0.4316         & 0.2535          \\
+					            h\_july4                             & -0.1047        & 0.2475                                            & -0.4229         & 0.6724           & -0.5898         & 0.3805          \\
+					            h\_mem                               & -1.0002        & 0.2005                                            & -4.9889         & 0.0000           & -1.3932         & -0.6073         \\
+					            h\_labor                             & -0.0863        & 0.1583                                            & -0.5454         & 0.5855           & -0.3965         & 0.2239          \\
+					            w\_maxa                              & 0.6434         & 0.1841                                            & 3.4941          & 0.0005           & 0.2825          & 1.0043          \\
+					            w\_maxb                              & 0.3844         & 0.2536                                            & 1.5160          & 0.1295           & -0.1126         & 0.8814          \\
+					            w\_maxc                              & -1.2307        & 0.9379                                            & -1.3121         & 0.1895           & -3.0690         & 0.6076          \\
+					            w\_mina                              & 2.7672         & 0.8390                                            & 3.2980          & 0.0010           & 1.1227          & 4.4116          \\
+					            w\_minb                              & 3.6024         & 0.5503                                            & 6.5462          & 0.0000           & 2.5238          & 4.6810          \\
+					            w\_minc                              & 3.0501         & 0.3225                                            & 9.4574          & 0.0000           & 2.4180          & 3.6822          \\
+					            w\_rain                              & 1.7415         & 0.2269                                            & 7.6745          & 0.0000           & 1.2967          & 2.1862          \\
+					            w\_snow                              & 1.4631         & 0.6946                                            & 2.1063          & 0.0352           & 0.1016          & 2.8245          \\
+					            year2                                & 1.5297         & 0.1526                                            & 10.022          & 0.0000           & 1.2306          & 1.8289          \\
+					            year3                                & 1.7852         & 0.1677                                            & 10.646          & 0.0000           & 1.4565          & 2.1139          \\
+					            year4                                & 2.2659         & 0.1728                                            & 13.117          & 0.0000           & 1.9273          & 2.6045          \\
+					            year5                                & 2.4164         & 0.1830                                            & 13.203          & 0.0000           & 2.0577          & 2.7751          \\
+					            year6                                & 2.3753         & 0.1693                                            & 14.033          & 0.0000           & 2.0436          & 2.7070          \\
+					            year7                                & 2.6131         & 0.1711                                            & 15.277          & 0.0000           & 2.2779          & 2.9484          \\
+					            year8                                & 2.3433         & 0.1845                                            & 12.699          & 0.0000           & 1.9816          & 2.7050          \\
+					            year9                                & 2.3747         & 0.1789                                            & 13.276          & 0.0000           & 2.0241          & 2.7253          \\
+					            year10                               & 2.6030         & 0.1753                                            & 14.847          & 0.0000           & 2.2594          & 2.9467          \\
+					            month2                               & 1.3267         & 0.2045                                            & 6.4865          & 0.0000           & 0.9258          & 1.7275          \\
+					            month3                               & 2.2704         & 0.2040                                            & 11.132          & 0.0000           & 1.8706          & 2.6701          \\
+					            month4                               & 3.1781         & 0.1930                                            & 16.468          & 0.0000           & 2.7998          & 3.5563          \\
+					            month5                               & 3.3692         & 0.2405                                            & 14.010          & 0.0000           & 2.8978          & 3.8405          \\
+					            month6                               & 2.7740         & 0.2756                                            & 10.064          & 0.0000           & 2.2338          & 3.3143          \\
+					            month7                               & 2.5672         & 0.2974                                            & 8.6318          & 0.0000           & 1.9843          & 3.1502          \\
+					            month8                               & 3.0297         & 0.2606                                            & 11.625          & 0.0000           & 2.5189          & 3.5405          \\
+					            month9                               & 3.8706         & 0.2021                                            & 19.151          & 0.0000           & 3.4744          & 4.2667          \\
+					            month10                              & 3.4674         & 0.1796                                            & 19.302          & 0.0000           & 3.1153          & 3.8195          \\
+					            month11                              & 1.6990         & 0.2377                                            & 7.1471          & 0.0000           & 1.2331          & 2.1650          \\
+					            month12                              & 1.2190         & 0.2251                                            & 5.4149          & 0.0000           & 0.7778          & 1.6602          \\
+					            attend\_v                            & 0.1199         & 0.0182                                            & 6.5803          & 0.0000           & 0.0842          & 0.1556          \\
+					            \hline
+					            \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                                     \\
+					            \multicolumn{2}{l}{R-squared}        & 0.9918         & \multicolumn{4}{l}{}                                                                                                       \\
+					            \multicolumn{2}{l}{Adj. R-squared}   & 0.9912         & \multicolumn{4}{l}{}                                                                                                       \\
+					            \multicolumn{2}{l}{F-statistic}      & 1.08e+05       & \multicolumn{4}{l}{(Prob $F$-statistic = 0.0000)}                                                                          \\
+					            \multicolumn{2}{l}{No. Observations} & 516            & \multicolumn{4}{l}{}                                                                                                       \\
+					            \multicolumn{2}{l}{P-value (F-stat)} & 0.0000         & \multicolumn{4}{l}{}                                                                                                       \\
+					            \multicolumn{2}{l}{Distribution}     & chi2(37)       & \multicolumn{4}{l}{}                                                                                                       \\
+					            \multicolumn{2}{l}{Cov. Estimator}   & robust         & \multicolumn{4}{l}{}                                                                                                       \\
+					            \hline
+				            \end{tabular}
+			            \end{table}
+
+			            \pagebreak
+
+			            \begin{pythonbox}[Python Code]
+				            \inputminted{python}{code/prob2ci.py}
+			            \end{pythonbox}
+			      \item
+			            \textbf{Answer:} after doing the test we get a p value of 0.000 thus we reject the null hypothesis of that no
+			            of the moves have an impact on assault and thus conlude there is significant evidence to conclude
+			            that there is an association between the movies and assaults.
+
+			            \begin{table}[htbp]
+				            \centering
+				            \caption{Linear Equality Hypothesis Test}
+				            \begin{tabular}{lcc}
+					            \hline
+					            \textbf{Statistic} & \textbf{Value} & \textbf{Notes} \\
+					            \hline
+					            Test Statistic     & 96.8238        & -              \\
+					            p-value            & 0.0000         & -              \\
+					            Distribution       & chi2(3)        & -              \\
+					            \hline
+				            \end{tabular}
+			            \end{table}
+
+			            \begin{pythonbox}[Python Code]
+				            \inputminted{python}{code/prob2cii.py}
+			            \end{pythonbox}
+			      \item
+
+			            \begin{table}[htbp]
+				            \centering
+				            \caption{Predicted Percentage Change in Assaults}
+				            \begin{tabular}{l c}
+					            \hline
+					            \textbf{Statistic}              & \textbf{Value}     \\
+					            \hline
+					            Predicted \% change in assaults & 49.64\%            \\
+					            95\% Confidence Interval (CI)   & [24.24\%, 80.24\%] \\
+					            \hline
+				            \end{tabular}
+			            \end{table}
+
+
+			            \begin{pythonbox}[Python Code]
+				            \inputminted{python}{code/prob2ciii.py}
+			            \end{pythonbox}
+		      \end{enumerate}
+		\item It is difficult to control for all the variables that affect assaults and that might be
+		      correlated with movie attendance. For example, the effect of the weather on
+		      assaults and movie attendance is only crudely approximated by the weather
+		      variables in the data set. However, the data set does include a set of instruments,
+		      pr\_attend\_v, pr\_attend\_m, and pr\_attend\_n, that are correlated with attendance
+		      but are (arguably) uncorrelated with weekend-specific factors (such as the
+		      weather) that affect both assaults and movie attendance. These instruments use
+		      historical attendance patterns, not information on a particular weekend, to predict
+		      a film’s attendance in a given weekend. For example, if a film’s attendance is
+		      high in the second week of its release, then this can be used to predict that its
+		      attendance was also high in the first week of its release. (The details of the
+		      construction of these instruments are available in the Dahl and DellaVigna’s
+		      paper on Canvas) Run the regression from part (b) (including year, month,
+		      holiday, and weather controls) but now using pr\_attend\_v, pr\_attend\_m, and
+		      pr\_attend\_n as instruments for attend\_v, attend\_m, and attend\_n. Use this
+		      regression to answer (b)(i)–(b)(iii).
+		      \begin{enumerate}[(i)]
+			      \item
+			            \textbf{Answer:} When taking into account all the controls, it seems that viewing a stro
+			            ngly violent movie decreases assaults by 12.22 percent, which is significant
+			            since it's associated p-value is below 0.00.
+
+			            \begin{table}[htbp]
+				            \centering
+				            \caption{IV-2SLS Estimation Results: ln\_assaults}
+				            \begin{tabular}{lcccccc}
+					            \hline
+					            \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                              & \textbf{t-stat} & \textbf{P-value} & \textbf{[0.025} & \textbf{0.975]} \\
+					            \hline
+					            attend\_m                            & 0.1222         & 0.0157                                          & 7.7982          & 0.0000           & 0.0915          & 0.1529          \\
+					            attend\_n                            & 0.1431         & 0.0141                                          & 10.184          & 0.0000           & 0.1156          & 0.1707          \\
+					            h\_chris                             & -1.2236        & 0.6015                                          & -2.0342         & 0.0419           & -2.4025         & -0.0447         \\
+					            h\_newyr                             & -1.0918        & 0.6409                                          & -1.7035         & 0.0885           & -2.3479         & 0.1644          \\
+					            h\_easter                            & -0.0730        & 0.1730                                          & -0.4223         & 0.6728           & -0.4120         & 0.2660          \\
+					            h\_july4                             & -0.0104        & 0.1988                                          & -0.0525         & 0.9581           & -0.4000         & 0.3792          \\
+					            h\_mem                               & -1.1828        & 0.2242                                          & -5.2759         & 0.0000           & -1.6222         & -0.7434         \\
+					            h\_labor                             & -0.0397        & 0.1749                                          & -0.2272         & 0.8203           & -0.3825         & 0.3031          \\
+					            w\_maxa                              & 0.5675         & 0.1919                                          & 2.9574          & 0.0031           & 0.1914          & 0.9436          \\
+					            w\_maxb                              & 0.2810         & 0.2805                                          & 1.0017          & 0.3165           & -0.2688         & 0.8307          \\
+					            w\_maxc                              & -1.1101        & 1.0709                                          & -1.0366         & 0.2999           & -3.2091         & 0.9889          \\
+					            w\_mina                              & 2.7290         & 0.8219                                          & 3.3203          & 0.0009           & 1.1181          & 4.3399          \\
+					            w\_minb                              & 3.3800         & 0.5602                                          & 6.0335          & 0.0000           & 2.2820          & 4.4779          \\
+					            w\_minc                              & 2.6254         & 0.3399                                          & 7.7231          & 0.0000           & 1.9591          & 3.2917          \\
+					            w\_rain                              & 1.5124         & 0.2337                                          & 6.4712          & 0.0000           & 1.0544          & 1.9705          \\
+					            w\_snow                              & 1.1629         & 0.6960                                          & 1.6708          & 0.0948           & -0.2013         & 2.5271          \\
+					            year2                                & 1.4104         & 0.1580                                          & 8.9280          & 0.0000           & 1.1008          & 1.7201          \\
+					            year3                                & 1.5671         & 0.1710                                          & 9.1649          & 0.0000           & 1.2320          & 1.9023          \\
+					            year4                                & 2.0745         & 0.1765                                          & 11.751          & 0.0000           & 1.7285          & 2.4206          \\
+					            year5                                & 2.2178         & 0.1824                                          & 12.159          & 0.0000           & 1.8603          & 2.5753          \\
+					            year6                                & 2.2026         & 0.1744                                          & 12.629          & 0.0000           & 1.8608          & 2.5444          \\
+					            year7                                & 2.4496         & 0.1765                                          & 13.879          & 0.0000           & 2.1036          & 2.7955          \\
+					            year8                                & 2.2256         & 0.1913                                          & 11.632          & 0.0000           & 1.8506          & 2.6006          \\
+					            year9                                & 2.1518         & 0.1826                                          & 11.781          & 0.0000           & 1.7938          & 2.5098          \\
+					            year10                               & 2.3896         & 0.1753                                          & 13.632          & 0.0000           & 2.0460          & 2.7332          \\
+					            month2                               & 1.1674         & 0.2055                                          & 5.6802          & 0.0000           & 0.7646          & 1.5702          \\
+					            month3                               & 2.0868         & 0.2050                                          & 10.181          & 0.0000           & 1.6851          & 2.4885          \\
+					            month4                               & 3.0009         & 0.1950                                          & 15.391          & 0.0000           & 2.6187          & 3.3830          \\
+					            month5                               & 3.1219         & 0.2494                                          & 12.516          & 0.0000           & 2.6330          & 3.6108          \\
+					            month6                               & 2.4022         & 0.2845                                          & 8.4435          & 0.0000           & 1.8446          & 2.9599          \\
+					            month7                               & 1.9796         & 0.3285                                          & 6.0268          & 0.0000           & 1.3358          & 2.6233          \\
+					            month8                               & 2.6224         & 0.2760                                          & 9.5004          & 0.0000           & 2.0814          & 3.1634          \\
+					            month9                               & 3.6537         & 0.2077                                          & 17.595          & 0.0000           & 3.2467          & 4.0607          \\
+					            month10                              & 3.1680         & 0.1864                                          & 16.996          & 0.0000           & 2.8027          & 3.5334          \\
+					            month11                              & 1.3457         & 0.2530                                          & 5.3198          & 0.0000           & 0.8499          & 1.8414          \\
+					            month12                              & 1.1511         & 0.2299                                          & 5.0062          & 0.0000           & 0.7004          & 1.6018          \\
+					            attend\_v                            & 0.2263         & 0.0276                                          & 8.1979          & 0.0000           & 0.1722          & 0.2804          \\
+					            \hline
+					            \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                                   \\
+					            \multicolumn{2}{l}{R-squared}        & 0.9912         & \multicolumn{4}{l}{}                                                                                                     \\
+					            \multicolumn{2}{l}{Adj. R-squared}   & 0.9905         & \multicolumn{4}{l}{}                                                                                                     \\
+					            \multicolumn{2}{l}{F-statistic}      & 9.098e+04      & \multicolumn{4}{l}{(Prob F-statistic = 0.0000)}                                                                          \\
+					            \multicolumn{2}{l}{No. Observations} & 516            & \multicolumn{4}{l}{}                                                                                                     \\
+					            \multicolumn{2}{l}{P-value (F-stat)} & 0.0000         & \multicolumn{4}{l}{}                                                                                                     \\
+					            \multicolumn{2}{l}{Distribution}     & chi2(37)       & \multicolumn{4}{l}{}                                                                                                     \\
+					            \multicolumn{2}{l}{Cov. Estimator}   & robust         & \multicolumn{4}{l}{}                                                                                                     \\
+					            \hline
+				            \end{tabular}
+			            \end{table}
+
+			            \pagebreak
+			            \begin{pythonbox}[Python Code]
+				            \inputminted{python}{code/prob2di.py}
+			            \end{pythonbox}
+			      \item
+			            \textbf{Answer:} after doing the test we get a p value of 0.000 thus we reject the null hypothesis of that no
+			            of the moves have an impact on assault and thus conlude there is significant evidence to conclude
+			            that there is an association between the movies and assaults.
+
+			            \begin{table}[htbp]
+				            \centering
+				            \caption{Linear Equality Hypothesis Test}
+				            \begin{tabular}{lcc}
+					            \hline
+					            \textbf{Statistic} & \textbf{Value} & \textbf{Notes} \\
+					            \hline
+					            Test Statistic     & 122.5900       & -              \\
+					            p-value            & 0.0000         & -              \\
+					            Distribution       & chi2(3)        & -              \\
+					            \hline
+				            \end{tabular}
+			            \end{table}
+
+
+			            \begin{pythonbox}[Python Code]
+				            \inputminted{python}{code/prob2dii.py}
+			            \end{pythonbox}
+
+			            \pagebreak
+			      \item
+
+			            \begin{table}[htbp]
+				            \centering
+				            \caption{Predicted Percentage Change in Assaults}
+				            \begin{tabular}{l c}
+					            \hline
+					            \textbf{Statistic}              & \textbf{Value}      \\
+					            \hline
+					            Predicted \% change in assaults & 163.90\%            \\
+					            95\% Confidence Interval (CI)   & [97.23\%, 253.09\%] \\
+					            \hline
+				            \end{tabular}
+			            \end{table}
+
+
+			            \begin{pythonbox}[Python Code]
+				            \inputminted{python}{code/prob2diii.py}
+			            \end{pythonbox}
+		      \end{enumerate}
+		\item Based on your analysis, what do you conclude about the effect of violent movies
+		      on (short-run) violent behavior?
+
+		      \textbf{Answer:} yes, but looking at the other results for the other types of movies there seems to
+		      an association with the other type of movies and assaults
 	\end{enumerate}
 \end{homeworkProblem}
 

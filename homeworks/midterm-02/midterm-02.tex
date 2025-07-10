@@ -483,8 +483,7 @@
 	\end{enumerate}
 \end{homeworkProblem}
 
-
-% Problem 2
+% Homework Problem 2
 \begin{homeworkProblem}
 	Use the data set \textbf{Movies}
 
@@ -1030,7 +1029,6 @@
 				            \end{tabular}
 			            \end{table}
 
-
 			            \begin{pythonbox}[Python Code]
 				            \inputminted{python}{code/prob2diii.py}
 			            \end{pythonbox}
@@ -1043,6 +1041,7 @@
 	\end{enumerate}
 \end{homeworkProblem}
 
+% Homework Problem 3
 \begin{homeworkProblem}
 	We examined \textbf{Koop and Tobias's data} on wages, education, ability, and so on.
 	We considered the model.
@@ -1072,12 +1071,147 @@
 		      and recompute the model. Report all results. How do the results change? Based on your
 		      results, what is the marginal value of a college degree? What is the marginal impact on ln
 		      Wage of a graduate degree?
+
+		      \textbf{Answer:} the marginal efect is of 0.1747. this means that 1 unit increas in collage means an incrament
+		      of 17\% in wages.
+
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{OLS Regression Results: lwage}
+			      \begin{tabular}{lcccccc}
+				      \hline
+				      \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                               & \textbf{t} & \textbf{P$>|t|$} & \textbf{[0.025} & \textbf{0.975]} \\
+				      \hline
+				      Intercept                            & 0.9897         & 0.034                                            & 29.198     & 0.000            & 0.923           & 1.056           \\
+				      edu                                  & 0.0712         & 0.002                                            & 31.538     & 0.000            & 0.067           & 0.076           \\
+				      ability                              & 0.0774         & 0.005                                            & 15.682     & 0.000            & 0.068           & 0.087           \\
+				      exper                                & 0.0395         & 0.001                                            & 43.970     & 0.000            & 0.038           & 0.041           \\
+				      meduc                                & 7.099e-05      & 0.002                                            & 0.042      & 0.967            & -0.003          & 0.003           \\
+				      feduc                                & 0.0053         & 0.001                                            & 3.974      & 0.000            & 0.003           & 0.008           \\
+				      brokenhome                           & -0.0529        & 0.010                                            & -5.292     & 0.000            & -0.072          & -0.033          \\
+				      siblings                             & 0.0049         & 0.002                                            & 2.720      & 0.007            & 0.001           & 0.008           \\
+				      \hline
+				      \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                               \\
+				      \multicolumn{2}{l}{R-squared}        & 0.176          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Adj. R-squared}   & 0.176          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{F-statistic}      & 546.6          & \multicolumn{4}{l}{(Prob $F$-statistic = 0.000)}                                                                     \\
+				      \multicolumn{2}{l}{No. Observations} & 17919          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Residuals}     & 17911          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Model}         & 7              & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Log-Likelihood}   & -12255         & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{AIC}              & 2.453e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{BIC}              & 2.459e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{7}{l}{Durbin-Watson: 0.804}                                                                                                                                     \\
+				      \multicolumn{7}{l}{Omnibus: 1110.722, Prob(Omnibus): 0.000}                                                                                                                  \\
+				      \multicolumn{7}{l}{Jarque-Bera (JB): 2075.146, Prob(JB): 0.000}                                                                                                              \\
+				      \multicolumn{7}{l}{Skew: -0.458, Kurtosis: 4.393}                                                                                                                            \\
+				      \multicolumn{7}{l}{Cond. No.: 218}                                                                                                                                           \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
+
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{OLS Regression Results: lwage}
+			      \begin{tabular}{lcccccc}
+				      \hline
+				      \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                               & \textbf{t} & \textbf{P$>|t|$} & \textbf{[0.025} & \textbf{0.975]} \\
+				      \hline
+				      Intercept                            & 1.8112         & 0.021                                            & 87.523     & 0.000            & 1.771           & 1.852           \\
+				      col                                  & 0.1747         & 0.009                                            & 20.020     & 0.000            & 0.158           & 0.192           \\
+				      grad                                 & 0.3624         & 0.021                                            & 17.373     & 0.000            & 0.322           & 0.403           \\
+				      ability                              & 0.1010         & 0.005                                            & 20.747     & 0.000            & 0.091           & 0.111           \\
+				      exper                                & 0.0381         & 0.001                                            & 42.078     & 0.000            & 0.036           & 0.040           \\
+				      meduc                                & 0.0008         & 0.002                                            & 0.478      & 0.633            & -0.003          & 0.004           \\
+				      feduc                                & 0.0070         & 0.001                                            & 5.186      & 0.000            & 0.004           & 0.010           \\
+				      brokenhome                           & -0.0696        & 0.010                                            & -6.908     & 0.000            & -0.089          & -0.050          \\
+				      siblings                             & 0.0037         & 0.002                                            & 2.049      & 0.040            & 0.000           & 0.007           \\
+				      \hline
+				      \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                               \\
+				      \multicolumn{2}{l}{R-squared}        & 0.157          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Adj. R-squared}   & 0.157          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{F-statistic}      & 416.8          & \multicolumn{4}{l}{(Prob $F$-statistic = 0.000)}                                                                     \\
+				      \multicolumn{2}{l}{No. Observations} & 17919          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Residuals}     & 17910          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Model}         & 8              & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Log-Likelihood}   & -12460         & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{AIC}              & 2.494e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{BIC}              & 2.501e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{7}{l}{Durbin-Watson: 0.795}                                                                                                                                     \\
+				      \multicolumn{7}{l}{Omnibus: 999.899, Prob(Omnibus): 0.000}                                                                                                                   \\
+				      \multicolumn{7}{l}{Jarque-Bera (JB): 1810.345, Prob(JB): 0.000}                                                                                                              \\
+				      \multicolumn{7}{l}{Skew: -0.429, Kurtosis: 4.300}                                                                                                                            \\
+				      \multicolumn{7}{l}{Cond. No.: 111}                                                                                                                                           \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
+
+		      \pagebreak
+
+		      \begin{pythonbox}[Python Code]
+			      \inputminted{python}{code/prob3a.py}
+		      \end{pythonbox}
+
+
 		\item The aggregation in part (a) actually loses quite a bit of information. Another way to
 		      introduce non-linearity in education is through the function itself. Add $educ^2$ to the
 		      equation in part (a) and recompute the model. Again, report all results. What changes are
 		      suggested? Test the hypothesis that the quadratic term in the equation is not needed—that
 		      is, that its coefficient is zero. Based on your results, sketch a profile of log wages as a
 		      function of education.
+
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{OLS Regression Results: lwage}
+			      \begin{tabular}{lcccccc}
+				      \hline
+				      \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                               & \textbf{t} & \textbf{P$>|t|$} & \textbf{[0.025} & \textbf{0.975]} \\
+				      \hline
+				      Intercept                            & 0.4278         & 0.120                                            & 3.562      & 0.000            & 0.192           & 0.663           \\
+				      edu                                  & 0.1559         & 0.018                                            & 8.901      & 0.000            & 0.122           & 0.190           \\
+				      edu2                                 & -0.0031        & 0.001                                            & -4.877     & 0.000            & -0.004          & -0.002          \\
+				      ability                              & 0.0743         & 0.005                                            & 14.958     & 0.000            & 0.065           & 0.084           \\
+				      exper                                & 0.0396         & 0.001                                            & 44.108     & 0.000            & 0.038           & 0.041           \\
+				      meduc                                & 0.0003         & 0.002                                            & 0.180      & 0.857            & -0.003          & 0.004           \\
+				      feduc                                & 0.0052         & 0.001                                            & 3.884      & 0.000            & 0.003           & 0.008           \\
+				      brokenhome                           & -0.0496        & 0.010                                            & -4.954     & 0.000            & -0.069          & -0.030          \\
+				      siblings                             & 0.0050         & 0.002                                            & 2.789      & 0.005            & 0.001           & 0.009           \\
+				      \hline
+				      \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                               \\
+				      \multicolumn{2}{l}{R-squared}        & 0.177          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Adj. R-squared}   & 0.177          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{F-statistic}      & 481.8          & \multicolumn{4}{l}{(Prob $F$-statistic = 0.000)}                                                                     \\
+				      \multicolumn{2}{l}{No. Observations} & 17919          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Residuals}     & 17910          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Model}         & 8              & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Log-Likelihood}   & -12243         & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{AIC}              & 2.450e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{BIC}              & 2.457e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{7}{l}{Durbin-Watson: 0.805}                                                                                                                                     \\
+				      \multicolumn{7}{l}{Omnibus: 1107.409, Prob(Omnibus): 0.000}                                                                                                                  \\
+				      \multicolumn{7}{l}{Jarque-Bera (JB): 2083.917, Prob(JB): 0.000}                                                                                                              \\
+				      \multicolumn{7}{l}{Skew: -0.455, Kurtosis: 4.401}                                                                                                                            \\
+				      \multicolumn{7}{l}{Cond. No.: 5.89e+03}                                                                                                                                      \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
+		      \begin{figure}[H]
+			      \centering
+			      \includegraphics[width=0.8\textwidth]{assets/fig.png}
+			      \caption{Histograma de la la gama simulada}
+		      \end{figure}
+
+
+		      \pagebreak
+
+		      \begin{pythonbox}[Python Code]
+			      \inputminted{python}{code/prob3b.py}
+		      \end{pythonbox}
+
+
 		\item One might suspect that the value of education is enhanced by greater ability. We could
 		      examine this effect by introducing an interaction of the two variables in the equation.
 		      Add the variable
@@ -1088,6 +1222,61 @@
 		      education? The sample mean value of ability is 0.052374. Compute a confidence interval
 		      for the marginal impact on ln Wage of an additional year of education for a person of
 		      average ability.
+
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{OLS Regression Results: lwage}
+			      \begin{tabular}{lcccccc}
+				      \hline
+				      \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                               & \textbf{z} & \textbf{P$>|z|$} & \textbf{[0.025} & \textbf{0.975]} \\
+				      \hline
+				      Intercept                            & 1.0019         & 0.034                                            & 29.130     & 0.000            & 0.934           & 1.069           \\
+				      edu                                  & 0.0701         & 0.002                                            & 28.353     & 0.000            & 0.065           & 0.075           \\
+				      educab                               & 0.0025         & 0.002                                            & 1.202      & 0.229            & -0.002          & 0.007           \\
+				      ability                              & 0.0469         & 0.026                                            & 1.824      & 0.068            & -0.003          & 0.097           \\
+				      exper                                & 0.0395         & 0.001                                            & 43.684     & 0.000            & 0.038           & 0.041           \\
+				      meduc                                & 5.423e-05      & 0.002                                            & 0.032      & 0.975            & -0.003          & 0.003           \\
+				      feduc                                & 0.0053         & 0.001                                            & 3.949      & 0.000            & 0.003           & 0.008           \\
+				      brokenhome                           & -0.0531        & 0.010                                            & -5.256     & 0.000            & -0.073          & -0.033          \\
+				      siblings                             & 0.0048         & 0.002                                            & 2.689      & 0.007            & 0.001           & 0.008           \\
+				      \hline
+				      \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                               \\
+				      \multicolumn{2}{l}{R-squared}        & 0.176          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Adj. R-squared}   & 0.176          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{F-statistic}      & 478.7          & \multicolumn{4}{l}{(Prob $F$-statistic = 0.000)}                                                                     \\
+				      \multicolumn{2}{l}{No. Observations} & 17919          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Residuals}     & 17910          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Model}         & 8              & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Log-Likelihood}   & -12254         & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{AIC}              & 2.453e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{BIC}              & 2.460e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{7}{l}{Durbin-Watson: 0.804}                                                                                                                                     \\
+				      \multicolumn{7}{l}{Omnibus: 1115.367, Prob(Omnibus): 0.000}                                                                                                                  \\
+				      \multicolumn{7}{l}{Jarque-Bera (JB): 2085.291, Prob(JB): 0.000}                                                                                                              \\
+				      \multicolumn{7}{l}{Skew: -0.460, Kurtosis: 4.396}                                                                                                                            \\
+				      \multicolumn{7}{l}{Cond. No.: 232}                                                                                                                                           \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{Predicted Change in Assaults}
+			      \begin{tabular}{l c}
+				      \hline
+				      \textbf{Statistic}            & \textbf{Value} \\
+				      \hline
+				      Predicted change in assaults  & 0.07           \\
+				      95\% Confidence Interval (CI) & [0.07, 0.08]   \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
+		      \pagebreak
+
+		      \begin{pythonbox}[Python Code]
+			      \inputminted{python}{code/prob3c.py}
+		      \end{pythonbox}
 		\item Combine the models in (b) and (c). Add both $educ^2$ and $EducAb$ to the base model in
 		      the beginning of the question and re-estimate. As before, report all results and describe
 		      your findings. If we define low ability as less than the mean and high ability as greater
@@ -1095,6 +1284,57 @@
 		      the sample and $+0.717891$ for the 10,055 high-ability individuals in the sample. Using
 		      the formulation in part (b), with this new functional form, sketch, describe, and compare
 		      the log wage profiles for low- and high-ability individuals.
+
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{OLS Regression Results: lwage}
+			      \begin{tabular}{lcccccc}
+				      \hline
+				      \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                               & \textbf{z} & \textbf{P$>|z|$} & \textbf{[0.025} & \textbf{0.975]} \\
+				      \hline
+				      Intercept                            & -0.1051        & 0.154                                            & -0.683     & 0.494            & -0.407          & 0.196           \\
+				      edu                                  & 0.2409         & 0.023                                            & 10.343     & 0.000            & 0.195           & 0.287           \\
+				      edu2                                 & -0.0065        & 0.001                                            & -7.350     & 0.000            & -0.008          & -0.005          \\
+				      educab                               & 0.0163         & 0.003                                            & 5.986      & 0.000            & 0.011           & 0.022           \\
+				      ability                              & -0.1245        & 0.034                                            & -3.717     & 0.000            & -0.190          & -0.059          \\
+				      exper                                & 0.0395         & 0.001                                            & 43.801     & 0.000            & 0.038           & 0.041           \\
+				      meduc                                & 0.0005         & 0.002                                            & 0.264      & 0.792            & -0.003          & 0.004           \\
+				      feduc                                & 0.0052         & 0.001                                            & 3.884      & 0.000            & 0.003           & 0.008           \\
+				      brokenhome                           & -0.0478        & 0.010                                            & -4.710     & 0.000            & -0.068          & -0.028          \\
+				      siblings                             & 0.0046         & 0.002                                            & 2.595      & 0.009            & 0.001           & 0.008           \\
+				      \hline
+				      \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                               \\
+				      \multicolumn{2}{l}{R-squared}        & 0.179          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Adj. R-squared}   & 0.178          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{F-statistic}      & 439.1          & \multicolumn{4}{l}{(Prob $F$-statistic = 0.000)}                                                                     \\
+				      \multicolumn{2}{l}{No. Observations} & 17919          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Residuals}     & 17909          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Model}         & 9              & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Log-Likelihood}   & -12225         & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{AIC}              & 2.447e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{BIC}              & 2.455e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{7}{l}{Durbin-Watson: 0.806}                                                                                                                                     \\
+				      \multicolumn{7}{l}{Omnibus: 1133.720, Prob(Omnibus): 0.000}                                                                                                                  \\
+				      \multicolumn{7}{l}{Jarque-Bera (JB): 2158.151, Prob(JB): 0.000}                                                                                                              \\
+				      \multicolumn{7}{l}{Skew: -0.460, Kurtosis: 4.429}                                                                                                                            \\
+				      \multicolumn{7}{l}{Cond. No.: 7.41e+03}                                                                                                                                      \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+
+		      \begin{figure}[H]
+			      \centering
+			      \includegraphics[width=0.8\textwidth]{assets/fig3.png}
+			      \caption{Histograma de la la gama simulada}
+		      \end{figure}
+
+
+
+		      \begin{pythonbox}[Python Code]
+			      \inputminted{python}{code/prob3d.py}
+		      \end{pythonbox}
+
+
 		\item Suppose that you are now given the following regression model:
 		      \[
 			      \begin{split}
@@ -1117,7 +1357,47 @@
 				      1 & \text{if } \text{Educ} \ge \tau, \\
 				      0 & \text{otherwise}.
 			      \end{cases}
-		      \]	\end{enumerate}
+		      \]
+
+		      \begin{table}[htbp]
+			      \centering
+			      \caption{OLS Regression Results: lwage}
+			      \begin{tabular}{lcccccc}
+				      \hline
+				      \textbf{Variable}                    & \textbf{Coef.} & \textbf{Std. Err.}                               & \textbf{t} & \textbf{P$>|t|$} & \textbf{[0.025} & \textbf{0.975]} \\
+				      \hline
+				      Intercept                            & 0.9469         & 0.037                                            & 25.458     & 0.000            & 0.874           & 1.020           \\
+				      tao1                                 & 0.0747         & 0.003                                            & 28.915     & 0.000            & 0.070           & 0.080           \\
+				      tao2                                 & 0.0711         & 0.002                                            & 31.510     & 0.000            & 0.067           & 0.076           \\
+				      ability                              & 0.0761         & 0.005                                            & 15.347     & 0.000            & 0.066           & 0.086           \\
+				      exper                                & 0.0396         & 0.001                                            & 44.021     & 0.000            & 0.038           & 0.041           \\
+				      meduc                                & 0.0002         & 0.002                                            & 0.091      & 0.928            & -0.003          & 0.003           \\
+				      feduc                                & 0.0053         & 0.001                                            & 3.931      & 0.000            & 0.003           & 0.008           \\
+				      brokenhome                           & -0.0519        & 0.010                                            & -5.192     & 0.000            & -0.071          & -0.032          \\
+				      siblings                             & 0.0048         & 0.002                                            & 2.689      & 0.007            & 0.001           & 0.008           \\
+				      \hline
+				      \multicolumn{7}{l}{\textit{Model statistics:}}                                                                                                                               \\
+				      \multicolumn{2}{l}{R-squared}        & 0.176          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Adj. R-squared}   & 0.176          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{F-statistic}      & 479.4          & \multicolumn{4}{l}{(Prob $F$-statistic = 0.000)}                                                                     \\
+				      \multicolumn{2}{l}{No. Observations} & 17919          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Residuals}     & 17910          & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Df Model}         & 8              & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{Log-Likelihood}   & -12251         & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{AIC}              & 2.452e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{2}{l}{BIC}              & 2.459e+04      & \multicolumn{4}{l}{}                                                                                                 \\
+				      \multicolumn{7}{l}{Durbin-Watson: 0.804}                                                                                                                                     \\
+				      \multicolumn{7}{l}{Omnibus: 1113.540, Prob(Omnibus): 0.000}                                                                                                                  \\
+				      \multicolumn{7}{l}{Jarque-Bera (JB): 2094.899, Prob(JB): 0.000}                                                                                                              \\
+				      \multicolumn{7}{l}{Skew: -0.457, Kurtosis: 4.404}                                                                                                                            \\
+				      \multicolumn{7}{l}{Cond. No.: 235}                                                                                                                                           \\
+				      \hline
+			      \end{tabular}
+		      \end{table}
+		      \begin{pythonbox}[Python Code]
+			      \inputminted{python}{code/prob3e.py}
+		      \end{pythonbox}
+	\end{enumerate}
 \end{homeworkProblem}
 
 \begin{homeworkProblem}

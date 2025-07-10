@@ -7,4 +7,3 @@ df["yhat2"] = df["yhat"] ** 2
 model = smf.ols("u_hat2 ~ yhat + yhat2", data=df).fit()
 print(model.summary())
 print(model.f_test("yhat = yhat2 = 0"))
-

@@ -4,12 +4,13 @@ from scipy.optimize import minimize
 from scipy.stats import rv_continuous
 
 df = pl.read_excel("data/Consumption.xlsx").to_pandas()
-C = df['realcons'].values
-Y = df['realgdp'].values
+C = df["realcons"].values
+Y = df["realgdp"].values
+
 
 class consumption_model(rv_continuous):
     def __init__(self, Y, C):
-        super().__init__(name='consumption')
+        super().__init__(name="consumption")
         self.Y = np.asarray(Y)
         self.C = np.asarray(C)
         self.n = len(C)
@@ -23,21 +24,16 @@ class consumption_model(rv_continuous):
             - np.log(2 * np.pi)
             - (1 / (2 * sigma_squared)) * np.sum(residuals**2)
         )
-        return -ll 
+        return -ll
 
     def fit(self, start_params=None, bounds=None):
         if start_params is None:
-            start_params = [50, 2, 1.2, 1] 
+            start_params = [50, 2, 1.2, 1]
 
         if bounds is None:
-            bounds = [
-                (None, None),   
-                (None, None),    
-                (1e-6, None),   
-                (1e-6, None)    
-            ]
+            bounds = [(None, None), (None, None), (1e-6, None), (1e-6, None)]
 
-        result = minimize(self._loglike, start_params, method='L-BFGS-B', bounds=bounds)
+        result = minimize(self._loglike, start_params, method="L-BFGS-B", bounds=bounds)
         self.mle_result = result
 
         if result.success:
@@ -46,6 +42,7 @@ class consumption_model(rv_continuous):
             raise RuntimeError("MLE optimization failed.")
 
         return result.x
+
 
 model = consumption_model(Y, C)
 alpha_hat, beta_hat, gamma_hat, sigma2_hat = model.fit()

@@ -12,4 +12,3 @@ model = smf.ols(
 ).fit(cov_type="HC1")
 print(model.summary())
 print(model.f_test("spirit = protest = catholic = 0"))
-

@@ -9,4 +9,3 @@ formula = "attendance ~ " + " + ".join(variables)
 
 model = smf.ols(formula=formula, data=df).fit()
 print(model.summary())
-

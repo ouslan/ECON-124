@@ -28,4 +28,3 @@ model = smf.ols("children ~ age + age2 + educ + electric + urban", data=df).fit(
     cov_type="HC1"
 )
 print(model.summary())
-

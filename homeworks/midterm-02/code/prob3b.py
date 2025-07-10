@@ -1,6 +1,6 @@
 # b
 
-formula  = "lwage ~ edu + edu2 + ability + exper + meduc + feduc + brokenhome + siblings"
+formula = "lwage ~ edu + edu2 + ability + exper + meduc + feduc + brokenhome + siblings"
 
 
 model = smf.ols(formula=formula, data=data).fit()

@@ -20,4 +20,3 @@ ci_upper = 100 * (np.exp(upper) - 1)
 
 print(f"Predicted % change in assaults: {percent_change:.2f}%")
 print(f"95% CI: [{ci_lower:.2f}%, {ci_upper:.2f}%]")
-

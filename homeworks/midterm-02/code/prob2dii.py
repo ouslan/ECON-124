@@ -1,8 +1,10 @@
-#iii
-coeffs = res_ivols.params[['attend_v', 'attend_m', 'attend_n']].values
-cov = res_ivols.cov.loc[['attend_v', 'attend_m', 'attend_n'], ['attend_v', 'attend_m', 'attend_n']].values
+# iii
+coeffs = res_ivols.params[["attend_v", "attend_m", "attend_n"]].values
+cov = res_ivols.cov.loc[
+    ["attend_v", "attend_m", "attend_n"], ["attend_v", "attend_m", "attend_n"]
+].values
 
-delta_x = np.array([6, -2, -1]) 
+delta_x = np.array([6, -2, -1])
 
 delta_ln_assaults = np.dot(delta_x, coeffs)
 
@@ -17,3 +19,4 @@ ci_upper = 100 * (np.exp(upper) - 1)
 
 print(f"Predicted % change in assaults: {percent_change:.2f}%")
 print(f"95% CI: [{ci_lower:.2f}%, {ci_upper:.2f}%]")
+

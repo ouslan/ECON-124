@@ -1400,15 +1400,42 @@
 	\end{enumerate}
 \end{homeworkProblem}
 
+% Homework Problem 4
 \begin{homeworkProblem}
 	Using the \textbf{California test score date}, estimate the regression below using
 	Nonlinear Least Squares. Report you coefficient estimates and standard errors.
 	$$
 		TestScore = \beta_0 (1- e^{\beta_1(income - \beta_2)}) + \epsilon
 	$$
+	\begin{table}[htbp]
+		\centering
+		\caption{Array Values}
+		\begin{tabular}{cc}
+			\hline
+			\textbf{Index} & \textbf{Value} \\
+			\hline
+			$\beta_1$      & 7.0322e+02     \\
+			$\beta_2$      & 5.5234e-02     \\
+			$\beta_3$      & -3.4004e+01    \\
+			\hline
+		\end{tabular}
+	\end{table}
+
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=0.8\textwidth]{assets/fig4.png}
+		\caption{Histograma de la la gama simulada}
+	\end{figure}
+
+
+	\begin{pythonbox}[Python Code]
+		\inputminted{python}{code/prob4.py}
+	\end{pythonbox}
+
 \end{homeworkProblem}
 
-
+% Homework Problem 4
 \begin{homeworkProblem}
 	Use the \textbf{Consumption.xlsx}. We have previously estimated the nonlinear consuption
 	function below using nonlinear least squares in class:

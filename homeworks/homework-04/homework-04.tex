@@ -1,0 +1,331 @@
+\documentclass{article}
+
+\usepackage{fancyhdr}
+\usepackage{extramarks}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage[plain]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[english]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,mathrsfs}
+\usepackage{xparse}
+\usepackage[inline,shortlabels]{enumitem}
+\setlist{topsep=2pt,itemsep=2pt,parsep=0pt,partopsep=0pt}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper,top=0.5in,bottom=0.2in,left=0.5in,right=0.5in,footskip=0.3in,includefoot]{geometry}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{minted} % tcolorbox minted library, required to use the "minted" tcb listing engine (this library is not loaded by the option [most])
+\usepackage{minted} % Allows input of raw code, such as Python code
+% \usepackage[colorlinks]{hyperref}
+
+
+\usetikzlibrary{automata,positioning}
+
+\tcbset{
+    pythoncodebox/.style={
+        enhanced jigsaw,breakable,
+        colback=gray!10,colframe=gray!20!black,
+        boxrule=1pt,top=2pt,bottom=2pt,left=2pt,right=2pt,
+        sharp corners,before skip=10pt,after skip=10pt,
+        attach boxed title to top left,
+        boxed title style={empty,
+            top=0pt,bottom=0pt,left=2pt,right=2pt,
+            interior code={\fill[fill=tcbcolframe] (frame.south west)
+                --([yshift=-4pt]frame.north west)
+                to[out=90,in=180] ([xshift=4pt]frame.north west)
+                --([xshift=-8pt]frame.north east)
+                to[out=0,in=180] ([xshift=16pt]frame.south east)
+                --cycle;
+            }
+        },
+        title={#1}, % Argument of pythoncodebox specifies the title
+        fonttitle=\sffamily\bfseries
+    },
+    pythoncodebox/.default={}, % Default is No title
+    %%% Starred version has no frame %%%
+    pythoncodebox*/.style={
+        enhanced jigsaw,breakable,
+        colback=gray!10,coltitle=gray!20!black,colbacktitle=tcbcolback,
+        frame hidden,
+        top=2pt,bottom=2pt,left=2pt,right=2pt,
+        sharp corners,before skip=10pt,after skip=10pt,
+        attach boxed title to top text left={yshift=-1mm},
+        boxed title style={empty,
+            top=0pt,bottom=0pt,left=2pt,right=2pt,
+            interior code={\fill[fill=tcbcolback] (interior.south west)
+                --([yshift=-4pt]interior.north west)
+                to[out=90,in=180] ([xshift=4pt]interior.north west)
+                --([xshift=-8pt]interior.north east)
+                to[out=0,in=180] ([xshift=16pt]interior.south east)
+                --cycle;
+            }
+        },
+        title={#1}, % Argument of pythoncodebox specifies the title
+        fonttitle=\sffamily\bfseries
+    },
+    pythoncodebox*/.default={}, % Default is No title
+}
+
+% Custom tcolorbox for Python code (not the code itself, just the box it appears in)
+\newtcolorbox{pythonbox}[1][]{pythoncodebox=#1}
+\newtcolorbox{pythonbox*}[1][]{pythoncodebox*=#1} % Starred version has no frame
+
+% Custom minted environment for Python code, NOT using tcolorbox
+\newminted{python}{autogobble,breaklines,mathescape}
+
+% Custom tcblisting environment for Python code, using the "minted" tcb listing engine
+% Adapted from https://tex.stackexchange.com/a/402096
+\NewTCBListing{python}{ !O{} !D(){} !G{} }{
+    listing engine=minted,
+    listing only,
+    pythoncodebox={#1}, % First argument specifies the title (if any)
+    minted language=python,
+    minted options/.expanded={
+        autogobble,breaklines,mathescape,
+        #2 % Second argument, delimited by (), denotes options for the minted environment
+    },
+    #3 % Third argument, delimited by {}, denotes options for the tcolorbox
+}
+
+
+% Basic Document Settings
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+\linespread{1.1}
+
+\pagestyle{fancy}
+\lhead{\hmwkAuthorName}
+\chead{\hmwkClass\ (\hmwkClassInstructor): \hmwkTitle}
+\rhead{\firstxmark}
+\lfoot{\lastxmark}
+\cfoot{\thepage}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+\setlength\parindent{0pt}
+
+%
+% Create Problem Sections
+%
+
+\newcommand{\enterProblemHeader}[1]{
+	\nobreak\extramarks{}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+}
+
+\newcommand{\exitProblemHeader}[1]{
+	\nobreak\extramarks{Problem \arabic{#1} (continued)}{Problem \arabic{#1} continued on next page\ldots}\nobreak{}
+	\stepcounter{#1}
+	\nobreak\extramarks{Problem \arabic{#1}}{}\nobreak{}
+}
+
+\setcounter{secnumdepth}{0}
+\newcounter{partCounter}
+\newcounter{homeworkProblemCounter}
+\setcounter{homeworkProblemCounter}{1}
+\nobreak\extramarks{Problem \arabic{homeworkProblemCounter}}{}\nobreak{}
+
+%
+% Homework Problem Environment
+%
+% This environment takes an optional argument. When given, it will adjust the
+% problem counter. This is useful for when the problems given for your
+% assignment aren't sequential. See the last 3 problems of this template for an
+% example.
+%
+\newenvironment{homeworkProblem}[1][-1]{
+	\ifnum#1>0
+		\setcounter{homeworkProblemCounter}{#1}
+	\fi
+	\section{Problem \arabic{homeworkProblemCounter}}
+	\setcounter{partCounter}{1}
+	\enterProblemHeader{homeworkProblemCounter}
+}{
+	\exitProblemHeader{homeworkProblemCounter}
+}
+
+%
+% Homework Details
+%   - Title
+%   - Due date
+%   - Class
+%   - Section/Time
+%   - Instructor
+%   - Author
+%
+
+\newcommand{\hmwkTitle}{Problem Set\ \#3}
+\newcommand{\hmwkDueDate}{Jun 5, 2025}
+\newcommand{\hmwkClass}{ECON 124}
+\newcommand{\hmwkClassInstructor}{Dr. Deniz Baglan}
+\newcommand{\hmwkAuthorName}{\textbf{Alejandro Ouslan}}
+
+%
+% Title Page
+%
+
+\title{
+	\vspace{2in}
+	\textmd{\textbf{\hmwkClass:\ \hmwkTitle}}\\
+	\normalsize\vspace{0.1in}\small{Due\ on\ \hmwkDueDate}\\
+	\vspace{0.1in}\large{\textit{\hmwkClassInstructor}}
+	\vspace{3in}
+}
+
+\author{\hmwkAuthorName}
+\date{}
+
+\renewcommand{\part}[1]{\textbf{\large Part \Alph{partCounter}}\stepcounter{partCounter}\\}
+
+%
+% Various Helper Commands
+%
+
+% Useful for algorithms
+\newcommand{\alg}[1]{\textsc{\bfseries \footnotesize #1}}
+
+% For derivatives
+\newcommand{\deriv}[1]{\frac{\mathrm{d}}{\mathrm{d}x} (#1)}
+
+% For partial derivatives
+\newcommand{\pderiv}[2]{\frac{\partial}{\partial #1} (#2)}
+
+% Integral dx
+\newcommand{\dx}{\mathrm{d}x}
+
+% Alias for the Solution section header
+\newcommand{\solution}{\textbf{\large Solution}}
+
+% Probability commands: Expectation, Variance, Covariance, Bias
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Bias}{\mathrm{Bias}}
+
+\begin{document}
+
+\maketitle
+
+\pagebreak
+
+% Homework problem 1
+\begin{homeworkProblem}
+	The file entitle \textbf{MONEYDEM.XLS} contains quarerly values of seasonally adjusted U.S.3-month
+	(TB3mo) and 1-year (TB1yr) treasury bill rates. Each series is measured over the period 1959:Q3 to
+	2001:Q1.
+	\begin{enumerate}[(a)]
+		\item Plot the time series of each series seperately. Does earch series appear to have a constant mean and
+		      variance over time?
+		\item Plot each time series on the same figure. What can you say about the relationship between the two series?
+		\item Use OLS to estimatethe relatiohnship between long-jterm and short-term interes rates as :
+		      $$
+			      TB1yr_t = \alpha + \beta TB3mo_t + \epsilon_t
+		      $$
+		\item What does the estimate of $\beta$ tell you about the relationship between long-run and short-run
+		      interes rates?
+		\item Test the null that $\beta = 1$. Is this result in accortdance with macroeconomic theory?
+		\item Plot the residuals from the regression in part (c) vs. TB3mo. Do you observe any pattern?
+		\item Use the White Test to test for the presence of heteroskedasticity.
+		\item Estimate the mmodel again, but calculate the robust (White) standard errors.
+		\item What happens to the coefficients of the model in part (h) relative to part (c)? What happens
+		      to the standart errors of the model in part (h) relative to part (c)? Why?
+		\item Create a dummy variable that is equal to 1 when TB3mo is in excess of 10.00 and zero otherwise.
+		      Include this variable in the regression model as
+		      $$
+			      TB1yr_t = \alpha + \beta TB3mo_t + \delta D_t + epsilon_t
+		      $$
+		      and run OLS
+		\item Test the null that the dummy variable is relevant in part (j).
+		      What happens to the fit of the model in part (j) relative to part (c)?
+		\item What happens to th efit of the model in part (j) relative to part (c)?
+	\end{enumerate}
+\end{homeworkProblem}
+
+% Homework problem 2
+\begin{homeworkProblem}
+	The file entiled SIM\_2.XLS contains simulated data sets. The series Y1, contains (T=100) values of
+	a simulated AR(1) process. Use this series to perferm the following task.
+	\begin{enumerate}[(a)]
+		\item Plot the sequence against time. Does the series appear to be stationary?
+		\item Plot the SCF and PACF.
+		\item Estimate the AR(1), AR(2), ARMA(1,1), ARMA(1,4), and ARMA(2,1) models with intercepts.
+		\item Estimate the series as both and AR(2) and ARMA (1,1) process without an intercept.
+		\item Use $\bar{R}^2$, AIC and SC to choose the best single model over parts (c) and (d).
+		\item Are you surprised by the result from part (e)? Why or why not?
+		\item Using your idel model, plot the ACF and PACF of the residuals. Do they appear to be white noise?
+	\end{enumerate}
+\end{homeworkProblem}
+
+% Homework problem 3
+\begin{homeworkProblem}
+	The file QUARTERLY.XLS contains the quarterly values of the CPI that have not been seasonally adjusted
+	(CPINSA). The series is over the period 1960:Q1 to 2008:Q1.
+	\begin{enumerate}[(a)]
+		\item Plot the CPINSA sequence against time. Does the series appear to be stationary?
+		\item Plot the ACF and PACF of CPINSA.
+		\item Create the growth rate series $log(CPINSA_{t}/ CPINSA_{t-1})$ and plot this series against time.
+		      Does the series appear to be stationary?
+		\item Plot the ACF and PACF of $log(CPINSA_{t}/ CPINSA_{t-1})$
+		\item Create the growth rate series $log(CPINSA_{t}/ CPINSA_{t-4})$ and plot this series against time.
+		      Does the series appear to be stationary?
+		\item Plot the ACF and PACF of $log(CPINSA_{t}/ CPINSA_{t-4})$
+		\item Use the ACF and PACF from part (f) and estimate a tentative model. Try several other alternative
+		      models.
+		\item Use $\bar{R}^2$, AIC and SC to choose the best model from part (g).
+		\item Instead of seasonally differing the series, regress $log(CPINSA_{t}/ CPINSA_{t-1})$ on (three) dummy variables to
+		      controll for seasonality.
+		\item Plot the residuals in part (i) versus time. Does this series appear to be stationary?
+		\item Plot the ACF and PACF for the residuals in part (i). What do you conclude here?
+	\end{enumerate}
+
+\end{homeworkProblem}
+
+% Homework problem 4
+\begin{homeworkProblem}
+	The file QUARTERLY.XLS contains U.S. interest rate over the period 1960:Q1 to 2008:Q1. Our
+	goal here is to estimate a quarerly model of spread between a long-term and a short-term interest rate.
+	Specifficaly, the interest rate spread (s) can be formed as the difference between the interest rate on
+	a 10-year U.S. goverment bonds (r10) and the rate on a three-month treasury bills (Tbill) as
+	$$
+		s_t = r10_t - Tbill_t
+	$$
+	\begin{enumerate}[(a)]
+		\item Plot $s_t$ against time. Does the series appear to be stationary?
+		\item Plot the ACF and PACF of the time series. What do you conclude?
+		\item Estimate an AR(2) model for $s_t$.
+		\item Look at the ACF and PACF of the residuals from the regression in part (c). What do the
+		      Ljung-Box Q-statistics say about autocorrelation in the residuals?
+		\item  Estimate an AR(7) model for $s_t$.
+		\item Look at the ACF and PACF of the residuals from the regression in part (e). What do the
+		      Ljung-Box Q-statistics say anout autocorrelation in the residuals?
+		\item Which model appears to perform better in terms of goodness-of-fit measures and diagnostic checks?
+		\item Estimate both the AR(2) and AR(7) models over the period 1960:Q1 to 2005:Q3. Obtain the
+		      one-step-ahead forecast and the one-step-ahead forcast error
+		      $$
+			      \hat{e}_{t+1} = y_{t_1} - \hat{y}_{t_1|t}
+		      $$
+		      for 2005:Q4($\hat{y}_{t+1|t})$ and compare that the true value of $s_t$ in 2005:Q4($y_{t+1}$). Which model has
+		      the smaller forecast error? Hint: this may be easier to compute in Excel (after etimation).
+		\item Estimate a ten-step-ahead forcast for each model as in part (h). Which model has the smallest mean
+		      square forecast error
+		      \[
+			      \begin{split}
+				      MSE & = \frac{1}{10}\sum_{i=1}^{10}\hat{e}_{t+1}^2               \\
+				          & = \frac{1}{10}\sum_{i=1}^{10}(y_{t+1} - \hat{y}_{t+i|t})^2
+			      \end{split}
+		      \]
+		      Which model performs better? Is this surprising?
+	\end{enumerate}
+\end{homeworkProblem}
+
+
+\end{document}

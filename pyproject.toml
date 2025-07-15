@@ -17,6 +17,7 @@ dependencies = [
     "scikit-learn>=1.7.0",
     "scipy>=1.15.3",
     "statsmodels>=0.14.4",
+    "xlrd>=2.0.2",
 ]
 
 [dependency-groups]

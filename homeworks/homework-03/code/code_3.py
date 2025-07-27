@@ -1,3 +1,4 @@
+import numpy as np
 import polars as pl
 import statsmodels.api as sm
 
